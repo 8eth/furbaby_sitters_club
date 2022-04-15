@@ -1,4 +1,4 @@
-Hi
+Hi again
 # Project Template: React/Rails API
 
 ## Description
