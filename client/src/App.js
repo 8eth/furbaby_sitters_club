@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react"
+import { Route, Switch } from "react-router-dom"
 import LandingPage from "./components/LandingPage"
+import SignupPage from "./components/SignupPage"
+import LoginPage from "./components/LoginPage"
 import NavBar from "./components/NavBar"
+import Calendar from "./components/Calendar"
 
 function App() {
   const [sitters, setSitters] = useState([])
@@ -37,11 +41,29 @@ function App() {
 
   return (
     <div className="App">
-     <LandingPage sitters={sitters} clients={clients} appointments={appointments} pets={pets}/>
-     <NavBar />
+  
+      <LoginPage />
+      <SignupPage />
+
+      <main>
+        <Switch>
+          
+          <Route path="/home">
+              <LandingPage />
+          </Route>
+
+        </Switch>
+      </main>
     </div>
   );
 }
 
 
 export default App;
+
+   /* <LandingPage /> */
+
+     /* <NavBar />  */
+ /* <Route path="/schedule">
+         <Calendar sitters={sitters} clients={clients} appointments={appointments} pets={pets}/>
+       </Route> */

@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 
-// function LoginPage({ onLogin }) {
+function LoginPage({ onLogin }) {
 //   const [username, setUsername] = useState("");
 
 //   function handleSubmit(e) {
@@ -27,7 +27,11 @@ import React, {useState} from 'react'
 //       <button type="submit">Login</button>
 //     </form>
 //   );
-// }
+return(
+  <div>LoginPage</div>  
+)
+
+}
 
 
 export default LoginPage
