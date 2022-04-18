@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2022_04_18_153006) do
     t.string "phone_number"
     t.string "email"
     t.string "bio"
-    t.boolean "avaliability"
+    t.boolean "availability"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

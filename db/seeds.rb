@@ -22,7 +22,7 @@ image: Faker::LoremFlickr.image(size: "50x60", search_terms: ['Marvel Characters
 phone_number: Faker::PhoneNumber.unique.cell_phone, 
 email: Faker::Internet.unique.email, 
 bio: Faker::Lorem.sentence(word_count: 5), 
-avaliability: true)}
+availability: true)}
 
 puts "Making pets🐶🐱🐰..."
 20.times {Pet.create(name: Faker::JapaneseMedia::StudioGhibli.character, 

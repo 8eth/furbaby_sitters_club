@@ -6,7 +6,7 @@ class CreateSitters < ActiveRecord::Migration[6.1]
       t.string :phone_number
       t.string :email
       t.string :bio
-      t.boolean :avaliability
+      t.boolean :availability
 
       t.timestamps
     end
