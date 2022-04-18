@@ -12,8 +12,22 @@ function App() {
   const [appointments, setAppointments] = useState([])
   const [pets, setPets] = useState([])
 
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
+
   const baseUrl = "http://localhost:3000"
 
+  useEffect(() => {
+    fetch('/authorized_user')
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((user) => {
+          setIsAuthenticated(true);
+          setUser(user);
+        });
+      }
+    });
 
   useEffect(() => {
     fetch(baseUrl + "/sitters")
@@ -42,7 +56,7 @@ function App() {
   return (
     <div className="App">
   
-      <LoginPage />
+      <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
       <SignupPage />
 
       <main>
@@ -60,10 +74,3 @@ function App() {
 
 
 export default App;
-
-   /* <LandingPage /> */
-
-     /* <NavBar />  */
- /* <Route path="/schedule">
-         <Calendar sitters={sitters} clients={clients} appointments={appointments} pets={pets}/>
-       </Route> */

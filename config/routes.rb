@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   resources :sitters
   resources :clients
 
-  # post "/signup", to: "users#create"
-  # get "/me", to: "users#show"
-  # post "/login", to: "sessions#create"
-  # delete "/logout", to: "sessions#destroy"
+  post "/signup", to: "clients#create"
+  get "/me", to: "clients#show"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
 
 
   # Routing logic: fallback requests for React Router.

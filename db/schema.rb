@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2022_04_18_153006) do
   end
 
   create_table "clients", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.string "full_name"
     t.string "image"
     t.string "address"

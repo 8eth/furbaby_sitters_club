@@ -7,13 +7,12 @@ class ClientsController < ApplicationController
     end
 
     def show
-        # user = Client.find_by(id: session[:client_id])
-        # render json: user
         render json: @client
     end
 
     def create
         client = Client.create!(client_params)
+        session[:client_id] = client.id
         render json: client, status: :created
     end
 
@@ -34,7 +33,7 @@ class ClientsController < ApplicationController
     end
 
     def client_params
-        params.permit(:full_name, :image, :address, :phone_number)
+        params.permit(:username, :password, :password_confirmation, :full_name, :image, :address, :phone_number)
     end
 
 end
