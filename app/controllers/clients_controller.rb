@@ -7,6 +7,8 @@ class ClientsController < ApplicationController
     end
 
     def show
+        # user = Client.find_by(id: session[:client_id])
+        # render json: user
         render json: @client
     end
 
