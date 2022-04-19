@@ -12,13 +12,16 @@ function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
     fetch(`/login`,{
       method:'POST',
       headers:{'Content-Type': 'application/json'},
-      body:JSON.stringify(user)
+      body:JSON.stringify({
+        username: username, 
+        password: password
+        })
     })
     .then(res => {
       if(res.ok){
         res.json()
-        .then(user=>{
-          setUser(user)
+        .then(username=>{
+          setUser(username)
           setIsAuthenticated(true)
         })
         
@@ -35,6 +38,11 @@ function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="text"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
       />
       <button type="submit">Login</button>
     </form>
