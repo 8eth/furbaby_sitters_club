@@ -1,8 +1,16 @@
 import React from 'react'
+import NavBar from './NavBar'
+
 
 function AppointmentDetail() {
   return (
-    <div>AppointmentDetails</div>
+    <div>
+
+      <NavBar/>
+      Appointment Detail
+
+
+    </div>
   )
 }
 

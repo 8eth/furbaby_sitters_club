@@ -9,6 +9,7 @@
   post "/signup", to: "clients#create"
   post "/login", to: "sessions#login"
   delete "/logout", to: "sessions#logout"
+  # get "/me", to: 
 
 
   # Routing logic: fallback requests for React Router.

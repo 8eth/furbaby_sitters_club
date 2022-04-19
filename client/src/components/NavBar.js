@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
-    <div>NavBar
+    <div>
        <NavLink
             to="/calendar"
             exact
@@ -16,14 +16,14 @@ function NavBar() {
         </NavLink>
 
         <NavLink
-            to="/sitterDetail"
+            to="appointmentdetails"
             exact
             className="ui right floated button"
             activeStyle={{
               background: "#E6E6E8",
             }}
         >
-          Sitter Detail
+          Appointment Detail
         </NavLink>
 
         <NavLink

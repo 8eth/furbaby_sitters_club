@@ -4,7 +4,7 @@ import LandingPage from "./components/LandingPage"
 import SignupPage from "./components/SignupPage"
 import LoginPage from "./components/LoginPage"
 import NavBar from "./components/NavBar"
-import Calendar from "./components/Calendar"
+import SitterCalendar from "./components/SitterCalendar"
 import AppointmentDetail from "./components/AppointmentDetail"
 
 function App() {
@@ -24,16 +24,25 @@ function App() {
       if (res.ok) {
         res.json()
         .then((user) => {
-          setIsAuthenticated(true);
+          // setIsAuthenticated(true);
           setUser(user);
 
           fetch(baseUrl + "/sitters")
           .then((res) => res.json())
           .then(setSitters);
+
+          fetch(baseUrl + "/appointments")
+          .then((res) => res.json())
+          .then(setAppointments);
         });
       }
     });
   },[]);
+
+//  
+
+
+
 
   // useEffect(() => {
   //   fetch(baseUrl + "/clients")
@@ -41,11 +50,11 @@ function App() {
   //     .then(console.log);
   // }, []);
 
-  useEffect(() => {
-    fetch(baseUrl + "/appointments")
-      .then((res) => res.json())
-      .then(setAppointments);
-  }, []);
+  // useEffect(() => {
+  //   fetch(baseUrl + "/appointments")
+  //     .then((res) => res.json())
+  //     .then(setAppointments);
+  // }, []);
 
   // useEffect(() => {
   //   fetch(baseUrl + "/pets")
@@ -55,19 +64,22 @@ function App() {
 
   if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
 
+  console.log("app:", appointments)
+  console.log("app sitters:", sitters)
+
   return (
-    <div className="App">
+    <div className="background">
       <Switch>
       <Route exact path="/">
-        <LandingPage />
+        <LandingPage sitters={sitters}/>
       </Route>
       <Route exact path="/calendar">
-        <Calendar />
+        <SitterCalendar />
       </Route>
       <Route exact path="/appointmentdetails">
           <AppointmentDetail />
       </Route>
-      <Route path="/sign_up">
+      <Route path="/signup">
           <SignupPage />
       </Route>
       <Route path="/login">

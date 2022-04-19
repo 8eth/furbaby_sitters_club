@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import SignupPage from './SignupPage';
 
 
 function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
@@ -33,85 +34,39 @@ function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="text"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Login</button>
-    </form>
+    <div className="background">
+      <h3 className="center-content">Login</h3>
+      <div className="form-border center-content">
+        <div className="ui grid">
+          <form 
+              className="ui two fields form center"
+              onSubmit={handleSubmit}
+            >
+            <label> Username
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            </label>
+            <label> Password
+            <input
+              type="text"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+              <br></br>
+            </label>
+            <br></br>
+            <button className="ui submit button center" type="submit">Login</button>
+          </form>
+        </div>
+    </div>
+    <SignupPage />
+    </div>
   );
 
 }
 
 
 export default LoginPage
-
-// import React, {useState} from 'react'
-// import Auth from './Auth'
-
-
-// function Login({setUser,setIsAuthenticated}) {
-//     const [username, setUsername] = useState('')
-//     const [password, setPassword] = useState('')
-   
-//     const [error, setError] = useState([])
-
-//     function onSubmit(e){
-//         e.preventDefault()
-//         const user = {
-//             username: username,
-//             password
-//         }
-       
-//         fetch(`/login`,{
-//           method:'POST',
-//           headers:{'Content-Type': 'application/json'},
-//           body:JSON.stringify(user)
-//         })
-//         .then(res => {
-//           if(res.ok){
-//             res.json()
-//             .then(user=>{
-//               setUser(user)
-//               setIsAuthenticated(true)
-//             })
-            
-//           } else {
-//             res.json()
-//             .then(json => setError(json.error))
-//           }
-//         })
-//     }
-//     return (
-      
-//         <> 
-//         <h1>Flatiron Theater Company</h1>
-//         <h1>Login</h1>
-//         <form onSubmit={onSubmit}>
-//         <label>
-//           Username
-   
-//           <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-//         </label>
-//         <label>
-//          Password
-    
-//         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-//         </label>
-       
-//         <input type="submit" value="Login!" />
-//       </form>
-//       {error?<div>{error}</div>:null}
-//       <Auth setUser={setUser} setIsAuthenticated={setUser}/>
-//         </>
-//     )
-// }
-
-// export default Login;
