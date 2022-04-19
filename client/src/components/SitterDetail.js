@@ -17,7 +17,7 @@ function SitterDetail({sitter}) {
           <button className="ui submit button center" type="submit" 
           // onClick={() => handleClick(sitters)}
           >
-            Schedule Appointment with `${sitter.name}`
+            Schedule Appointment with `{sitter.name}`
           </button>
 
           <br></br>

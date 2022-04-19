@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
     skip_before_action :authorize, only: [:create]
-    before_action :find_client, only: [:update, :destroy]
+    # before_action :find_client, only: [:update, :destroy]
     
     def index
         render json: Client.all

@@ -16,11 +16,10 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
-  const baseUrl = "http://localhost:3000"
   console.log("app:", isAuthenticated)
   
   useEffect(() => {
-    fetch(baseUrl + '/authorize')
+    fetch('/authorize')
     .then((res) => {
       if (res.ok) {
         res.json()
@@ -29,11 +28,11 @@ function App() {
           setUser(user);
           console.log(user)
           
-          fetch(baseUrl + "/sitters")
+          fetch("/sitters")
           .then((res) => res.json())
           .then(setSitters);
 
-          fetch(baseUrl + "/appointments")
+          fetch("/appointments")
           .then((res) => res.json())
           .then(setAppointments);
         });
@@ -56,17 +55,6 @@ function App() {
 }
 
 
-  // useEffect(() => {
-  //   fetch(baseUrl + "/clients")
-  //     .then((res) => res.json())
-  //     .then(console.log);
-  // }, []);
-
-  // useEffect(() => {
-  //   fetch(baseUrl + "/appointments")
-  //     .then((res) => res.json())
-  //     .then(setAppointments);
-  // }, []);
 
   // useEffect(() => {
   //   fetch(baseUrl + "/pets")
@@ -77,7 +65,7 @@ function App() {
   if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
 
   
-  // console.log("app sitters:", sitters)
+  console.log("app sitters:", sitters)
 
   return (
     <div className="background">
@@ -85,9 +73,9 @@ function App() {
       <Route exact path="/">
         <LandingPage sitters={sitters}/>
       </Route>
-      <Route exact path="/calendar">
+      {/* <Route exact path="/calendar">
         <SitterCalendar />
-      </Route>
+      </Route> */}
       <Route exact path="/appointmentdetails">
           <AppointmentDetail />
       </Route>
