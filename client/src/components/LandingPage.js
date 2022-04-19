@@ -4,23 +4,25 @@ import SitterDetail from './SitterDetail'
 
 
 function LandingPage({sitters}) {
-  const [sits, setSits] = useState("")
+  // const [sits, setSits] = useState("")
 
-    useEffect(() => {
-    fetch("http://localhost:3000/sitters")
-      .then((res) => res.json())
-      .then(setSits);
-  }, []);
-  console.log("landing Page:", sits)
+  //   useEffect(() => {
+  //   fetch("http://localhost:3000/sitters")
+  //     .then((res) => res.json())
+  //     .then(setSits);
+  // }, []);
+  //console.log("landing Page:", sits)
   return (
-    <div>
+    <div className="background"> 
 
       <NavBar/>
+      <br></br>
       <h1>Welcome to Furbaby Sitters Club!!!</h1>
       <div>We worry about your furbaby so you don't have to!</div>
       <h2>Sitters:</h2>
       <div> 
-      <SitterDetail sitters={sitters}/>
+        <br></br>
+        <SitterDetail sitters={sitters}/>
       </div>
     </div>
   )

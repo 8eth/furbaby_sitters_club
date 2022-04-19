@@ -8,6 +8,7 @@ class ApplicationController < ActionController::API
 
   
   private
+  
   def client_id
     Client.find_by(id: session[:client_id])
   end

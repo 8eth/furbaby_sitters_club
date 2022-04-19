@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom"
 import LandingPage from "./components/LandingPage"
 import SignupPage from "./components/SignupPage"
 import LoginPage from "./components/LoginPage"
-import NavBar from "./components/NavBar"
+// import NavBar from "./components/NavBar"
 import SitterCalendar from "./components/SitterCalendar"
 import AppointmentDetail from "./components/AppointmentDetail"
 
@@ -39,9 +39,15 @@ function App() {
     });
   },[]);
 
-//  
-
-
+  const logout = () => {
+    fetch('/logout',{
+        method:'DELETE'
+    })
+    .then(()=>{
+        // setIsAuthenticated(false)
+        setUser(null)
+    })
+}
 
 
   // useEffect(() => {
@@ -62,7 +68,7 @@ function App() {
   //     .then(console.log);
   // }, []);
 
-  if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
+  // if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
 
   console.log("app:", appointments)
   console.log("app sitters:", sitters)

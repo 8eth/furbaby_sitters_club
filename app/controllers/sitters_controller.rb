@@ -1,5 +1,4 @@
 class SittersController < ApplicationController
-
     before_action :find_sitter, only: [:show, :update, :destroy]
 
     def index
