@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
       user = Client.find_by(username: params[:username])
       if user&.authenticate(params[:password])
         session[:client_id] = user.id
+        # debugger
         render json: user
       else
         render json: { errors: ["Invalid username or password"] }, status: :unauthorized

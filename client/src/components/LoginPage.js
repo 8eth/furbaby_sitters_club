@@ -2,11 +2,11 @@ import React, {useState} from 'react'
 import SignupPage from './SignupPage';
 
 
-function LoginPage({ setUser, setIsAuthenticated }) {
+function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
   const [username, setUsername] = useState("");
-    const [password, setPassword] = useState('')
+  const [password, setPassword] = useState('')
    
-    const [error, setError] = useState([])
+  const [error, setError] = useState([])
 
   function handleSubmit(e) {
     e.preventDefault();

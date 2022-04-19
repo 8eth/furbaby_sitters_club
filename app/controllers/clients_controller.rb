@@ -1,14 +1,15 @@
 class ClientsController < ApplicationController
     skip_before_action :authorize, only: [:create]
-    before_action :find_client, only: [:show, :update, :destroy]
+    before_action :find_client, only: [:update, :destroy]
     
     def index
         render json: Client.all
     end
 
     def show
+        # debugger
         test = Client.find_by(id: session[:client_id])
-        render json: test
+        render json: test, status: :ok
     end
 
     def create

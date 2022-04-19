@@ -1,23 +1,23 @@
 import React from 'react'
 
-function SitterDetail({sitters}) {
+function SitterDetail({sitter}) {
    
     return (
       <div>
         <div className="center aligned cards">
 
           <div className='ui card'>
-            <img src={sitters.image} alt="sitter"/>
-            <h4>Name:{sitters.name}</h4>
-            <h6>Bio:{sitters.bio}</h6>
-            <h6>Email:{sitters.email}</h6>
+            <img src={sitter.image} alt="sitter"/>
+            <h4>Name:{sitter.name}</h4>
+            <h6>Bio:{sitter.bio}</h6>
+            <h6>Email:{sitter.email}</h6>
             <h6>Phone:</h6>
           </div>
 
           <button className="ui submit button center" type="submit" 
           // onClick={() => handleClick(sitters)}
           >
-            Schedule Appointment with `{sitters.name}`
+            Schedule Appointment with `${sitter.name}`
           </button>
 
           <br></br>

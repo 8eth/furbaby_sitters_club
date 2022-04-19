@@ -5,7 +5,6 @@ class ApplicationController < ActionController::API
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   rescue_from ActiveRecord::RecordInvalid, with: :render_not_valid_response
-
   
   private
   
@@ -14,7 +13,8 @@ class ApplicationController < ActionController::API
   end
   
   def authorize
-    render json: { errors: ["Not authorized"] }, status: :unauthorized unless client_id
+    # debugger
+    render json: { errors: ["Not authorized"] }, status: :unauthorized unless session.include? :client_id
   end
 
   def render_not_found_response(exception)
