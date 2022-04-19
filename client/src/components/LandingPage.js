@@ -2,11 +2,12 @@ import React from 'react'
 import NavBar from './NavBar'
 
 
-function LandingPage() {
+function LandingPage({sitters}) {
   return (
     <div>
 
       <NavBar/>
+      <SitterDetail />
     </div>
   )
 }
