@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 function SitterDetail({sitter}) {
    
@@ -17,7 +18,8 @@ function SitterDetail({sitter}) {
           <button className="ui submit button center" type="submit" 
           // onClick={() => handleClick(sitters)}
           >
-            Schedule Appointment with `{sitter.name}`
+            <Link to="/calendar">Schedule Appointment with {sitter.name}</Link>
+            
           </button>
 
           <br></br>

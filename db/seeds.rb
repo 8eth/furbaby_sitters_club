@@ -26,7 +26,8 @@ Client.create(
 puts "Making sitters👤..."
 5.times {Sitter.create(
     name: Faker::FunnyName.unique.name,
-    image: Faker::LoremFlickr.image(size: "50x60", search_terms: ['Marvel Characters']), phone_number: Faker::PhoneNumber.unique.cell_phone, 
+    image: Faker::LoremFlickr.image(size: "290x348", search_terms: ['Marvel Characters']), 
+    phone_number: Faker::PhoneNumber.unique.cell_phone, 
     email: Faker::Internet.unique.email, 
     bio: Faker::Lorem.sentence(word_count: 5), 
     availability: true)}

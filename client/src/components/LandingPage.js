@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import SitterDetail from './SitterDetail'
+import SitterCalendar from "./SitterCalendar"
 
 
 function LandingPage({sitters}) {
@@ -22,6 +23,7 @@ function LandingPage({sitters}) {
       <div className="form-border ui center aligned five row grid container"> 
         {mappedSitters}
       </div>
+      
     </div>
   )
 }

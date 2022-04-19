@@ -1,19 +1,22 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ logout }) {
   return (
-    <div>
-      <NavLink
-        to="/logout"
+    <span>
+      
+      <div>
+      {/* <NavLink
+        to="/"
         exact
+        onClick={console.log("Click")}
         className="ui right floated button"
         activeStyle={{
           background: "#E6E6E8",
         }}
       >
         Logout
-      </NavLink>
+      </NavLink> */}
       
       <NavLink
         to="/appointmentdetails"
@@ -48,7 +51,12 @@ function NavBar() {
         Home
       </NavLink>
             
-    </div>
+      </div>
+      <button onClick={console.log("Logout Clicked")}>
+        Logout
+      </button>
+    </span>
+    
   )
 }
 

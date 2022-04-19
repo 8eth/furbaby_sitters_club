@@ -6,6 +6,7 @@ import LoginPage from "./components/LoginPage"
 import Logout from "./components/Logout"
 import SitterCalendar from "./components/SitterCalendar"
 import AppointmentDetail from "./components/AppointmentDetail"
+import NavBar from "./components/NavBar"
 
 function App() {
   const [sitters, setSitters] = useState([])
@@ -52,7 +53,7 @@ function App() {
         setIsAuthenticated(false)
         setUser(null)
     })
-}
+  }
 
 
 
@@ -73,9 +74,9 @@ function App() {
       <Route exact path="/">
         <LandingPage sitters={sitters}/>
       </Route>
-      {/* <Route exact path="/calendar">
+      <Route exact path="/calendar">
         <SitterCalendar />
-      </Route> */}
+      </Route>
       <Route exact path="/appointmentdetails">
           <AppointmentDetail />
       </Route>
@@ -86,7 +87,7 @@ function App() {
           <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
       </Route>
       <Route path="/logout">
-          <Logout logout={logout}/>
+          <NavBar logout={logout}/>
       </Route>
       </Switch>
     </div>
