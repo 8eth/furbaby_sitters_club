@@ -5,12 +5,13 @@ import SignupPage from "./components/SignupPage"
 import LoginPage from "./components/LoginPage"
 import NavBar from "./components/NavBar"
 import Calendar from "./components/Calendar"
+import AppointmentDetail from "./components/AppointmentDetail"
 
 function App() {
   const [sitters, setSitters] = useState([])
-  const [clients, setClients] = useState([])
+  // const [clients, setClients] = useState([])
   const [appointments, setAppointments] = useState([])
-  const [pets, setPets] = useState([])
+  // const [pets, setPets] = useState([])
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
@@ -18,56 +19,61 @@ function App() {
   const baseUrl = "http://localhost:3000"
 
   useEffect(() => {
-    fetch('/authorized_user')
+    fetch('/authorize')
     .then((res) => {
       if (res.ok) {
         res.json()
         .then((user) => {
           setIsAuthenticated(true);
           setUser(user);
+
+          fetch(baseUrl + "/sitters")
+          .then((res) => res.json())
+          .then(setSitters);
         });
       }
     });
+  },[]);
 
-  useEffect(() => {
-    fetch(baseUrl + "/sitters")
-      .then((res) => res.json())
-      .then(console.log);
-  }, []);
-
-  useEffect(() => {
-    fetch(baseUrl + "/clients")
-      .then((res) => res.json())
-      .then(console.log);
-  }, []);
+  // useEffect(() => {
+  //   fetch(baseUrl + "/clients")
+  //     .then((res) => res.json())
+  //     .then(console.log);
+  // }, []);
 
   useEffect(() => {
     fetch(baseUrl + "/appointments")
       .then((res) => res.json())
-      .then(console.log);
+      .then(setAppointments);
   }, []);
 
-  useEffect(() => {
-    fetch(baseUrl + "/pets")
-      .then((res) => res.json())
-      .then(console.log);
-  }, []);
+  // useEffect(() => {
+  //   fetch(baseUrl + "/pets")
+  //     .then((res) => res.json())
+  //     .then(console.log);
+  // }, []);
+
+  if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
 
   return (
     <div className="App">
-  
-      <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
-      <SignupPage />
-
-      <main>
-        <Switch>
-          
-          <Route path="/home">
-              <LandingPage />
-          </Route>
-
-        </Switch>
-      </main>
+      <Switch>
+      <Route exact path="/">
+        <LandingPage />
+      </Route>
+      <Route exact path="/calendar">
+        <Calendar />
+      </Route>
+      <Route exact path="/appointmentdetails">
+          <AppointmentDetail />
+      </Route>
+      <Route path="/sign_up">
+          <SignupPage />
+      </Route>
+      <Route path="/login">
+          <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
+      </Route>
+      </Switch>
     </div>
   );
 }

@@ -1,17 +1,19 @@
 class ApplicationController < ActionController::API
-
+  
   include ActionController::Cookies
+  before_action :authorize
 
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
   rescue_from ActiveRecord::RecordInvalid, with: :render_not_valid_response
 
-  before_action :authorize
-
+  
   private
-
+  def client_id
+    Client.find_by(id: session[:client_id])
+  end
+  
   def authorize
-    @current_user = Client.find_by(id: session[:client_id])
-    render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
+    render json: { errors: ["Not authorized"] }, status: :unauthorized unless client_id
   end
 
   def render_not_found_response(exception)

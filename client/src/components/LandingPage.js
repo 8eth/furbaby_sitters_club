@@ -4,7 +4,7 @@ import NavBar from './NavBar'
 
 function LandingPage() {
   return (
-    <div>LandingPage
+    <div>
 
       <NavBar/>
     </div>
