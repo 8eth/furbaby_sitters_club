@@ -17,7 +17,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
-  console.log("app:", isAuthenticated)
+  console.log(setIsAuthenticated)
   
   useEffect(() => {
     fetch('/authorize')
@@ -45,17 +45,32 @@ function App() {
     });
   },[]);
 
-  const logout = () => {
-    fetch('/logout',{
-        method:'DELETE'
-    })
-    .then(()=>{
-        setIsAuthenticated(false)
-        setUser(null)
-    })
-  }
+  // const logout = () => {
+  //   fetch('/logout',{
+  //       method:'DELETE'
+  //   })
+  //   .then(()=>{
+  //       setIsAuthenticated(false)
+  //       setUser(null)
+  //   })
+  // }
 
+  // console.log(sitters)
+  // console.log(appointments)
 
+//   
+// const mappedAppts = appointments.map((appointment) => (
+//       <AppointmentDetail
+//         key={appointment.id}
+//         appointment={appointment}
+//       />
+//     ))
+//   console.log(mappedAppts)
+
+// function handleAddAppointment(){
+//   setAllAppointments([...allAppointments, newAppointment])
+  
+//   }
 
   // useEffect(() => {
   //   fetch(baseUrl + "/pets")
@@ -65,8 +80,6 @@ function App() {
 
   if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
 
-  
-  console.log("app sitters:", sitters)
 
   return (
     <div className="background">
@@ -75,10 +88,10 @@ function App() {
         <LandingPage sitters={sitters}/>
       </Route>
       <Route exact path="/calendar">
-        <SitterCalendar />
+        <SitterCalendar appointment={appointments}/>
       </Route>
       <Route exact path="/appointmentdetails">
-          <AppointmentDetail />
+          <AppointmentDetail appointments={appointments}/>
       </Route>
       <Route path="/signup">
           <SignupPage />
@@ -86,10 +99,11 @@ function App() {
       <Route path="/login">
           <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
       </Route>
-      <Route path="/logout">
-          <NavBar logout={logout}/>
-      </Route>
+      {/* <Route path="/logout">
+          <NavBar />
+      </Route> */}
       </Switch>
+      <NavBar setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user}/>
     </div>
   );
 }

@@ -1,15 +1,24 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
 
-function NavBar({ logout }) {
+function NavBar({setIsAuthenticated, setUser}) {
+  console.log("auth:", setIsAuthenticated)
+  const logout = () => {
+    fetch('/logout',{
+        method:'DELETE'
+    })
+    .then(()=>{
+        setIsAuthenticated(false)
+        setUser(null)
+    })
+  }
   return (
-    <span>
+    <>
       
       <div>
       {/* <NavLink
         to="/"
-        exact
-        onClick={console.log("Click")}
+        onClick={()=> console.log("Logout Clicked")}
         className="ui right floated button"
         activeStyle={{
           background: "#E6E6E8",
@@ -52,10 +61,10 @@ function NavBar({ logout }) {
       </NavLink>
             
       </div>
-      <button onClick={console.log("Logout Clicked")}>
+      <button onClick={logout}>
         Logout
       </button>
-    </span>
+    </>
     
   )
 }

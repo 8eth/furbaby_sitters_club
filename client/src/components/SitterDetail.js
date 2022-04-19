@@ -12,11 +12,11 @@ function SitterDetail({sitter}) {
             <h4>Name:{sitter.name}</h4>
             <h6>Bio:{sitter.bio}</h6>
             <h6>Email:{sitter.email}</h6>
-            <h6>Phone:</h6>
+            <h6>Phone:{sitter.phone_number}</h6>
           </div>
 
           <button className="ui submit button center" type="submit" 
-          // onClick={() => handleClick(sitters)}
+          // onClick={ ()=> handleClick(sitters)}
           >
             <Link to="/calendar">Schedule Appointment with {sitter.name}</Link>
             

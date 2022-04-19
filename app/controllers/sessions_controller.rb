@@ -14,12 +14,13 @@ class SessionsController < ApplicationController
     end
   
     def logout
-      if session[:client_id] != nil
-        session.delete :client_id
-        head :no_content
-      else
-        render json: { errors: "Not Authorized"}, status: :unauthorized
-      end
+      session.delete :client_id
+      # if session[:client_id] != nil
+      #   session.delete :client_id
+      #   head :no_content
+      # else
+      #   render json: { errors: "Not Authorized"}, status: :unauthorized
+      # end
     end
   
 end

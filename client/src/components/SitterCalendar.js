@@ -11,6 +11,7 @@ import TimePicker from 'react-time-picker'
 import NavBar from './NavBar'
 import dateFns from 'react-big-calendar/lib/localizers/date-fns';
 import moment from 'moment'
+import AppointmentDetail from './AppointmentDetail';
 
 // const locales = {
 //   "en-US": require("date-fns/locale/en-US")
@@ -26,38 +27,39 @@ import moment from 'moment'
 
 const localizer = momentLocalizer(moment)
 
-const appointments = [
-  {
-    title: "Kitten",
-    allDay: true,
-    start: new Date("2022 04 06"),
-    end: new Date("2022 04 07")
-  },
+// const appointments = [
+//   {
+//     title: "Kitten",
+//     allDay: true,
+//     start: new Date("2022 04 06"),
+//     end: new Date("2022 04 07")
+//   },
 
 
-  {
-    title: "Pupper",
-    start: new Date("2022 04 13"),
-    end: new Date("2022 04 14")
-  },
+//   {
+//     title: "Pupper",
+//     start: new Date("2022 04 13"),
+//     end: new Date("2022 04 14")
+//   },
 
-  {
-    title: "Hamster",
-    allDay: true,
-    start: new Date("2022 04 20"),
-    end: new Date("2022 04 25")
-  }
-]
+//   {
+//     title: "Hamster",
+//     allDay: true,
+//     start: new Date("2022 04 20"),
+//     end: new Date("2022 04 25")
+//   }
+// ]
 
 
-function SitterCalendar() {
+function SitterCalendar({appointments}) {
 const [newAppointment, setNewAppointment] = useState({title:"", start: "", end: ""})
-const [allAppointments, setAllAppointments] = useState(appointments)
+ const [allAppointments, setAllAppointments] = useState(appointments)
 
-function handleAddAppointment(){
-setAllAppointments([...allAppointments, newAppointment])
 
-}
+
+// console.log(appointment)
+
+
   return (
     <div className="background"> 
       <NavBar/>
@@ -65,10 +67,11 @@ setAllAppointments([...allAppointments, newAppointment])
       <br></br>
       <br></br>
       <Calendar localizer={localizer}
-      events={allAppointments} 
-      startAccessor='start' 
-      endAccessor='end'
-      style={{height: 500, marginRight: "10px"}}/>
+        events={allAppointments} 
+        startAccessor='start' 
+        endAccessor='end'
+        style={{height: 500, marginRight: "10px"}}
+      />
     </div>
   )
 }

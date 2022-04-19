@@ -17,6 +17,9 @@ function LandingPage({sitters}) {
 
       <NavBar/>
       <br></br>
+      {/* <button onClick={()=> console.log("Logout Clicked")}>
+        Logout
+      </button> */}
       <h1>Welcome to Furbaby Sitters Club!!!</h1>
       <div>We worry about your furbaby so you don't have to!</div>
       <h2>Sitters:</h2>
