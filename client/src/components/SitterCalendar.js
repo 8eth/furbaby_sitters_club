@@ -25,7 +25,7 @@ import AppointmentDetail from './AppointmentDetail';
 //   locales,
 // })
 
-const localizer = momentLocalizer(moment)
+// const localizer = momentLocalizer(moment)
 
 // const appointments = [
 //   {
@@ -51,7 +51,7 @@ const localizer = momentLocalizer(moment)
 // ]
 
 
-function SitterCalendar({appointments}) {
+function SitterCalendar({appointments, logout}) {
 const [newAppointment, setNewAppointment] = useState({title:"", start: "", end: ""})
  const [allAppointments, setAllAppointments] = useState(appointments)
 
@@ -62,7 +62,7 @@ const [newAppointment, setNewAppointment] = useState({title:"", start: "", end: 
 
   return (
     <div className="background"> 
-      <NavBar/>
+      <NavBar logout={logout}/>
       <br></br>
       <br></br>
       <br></br>

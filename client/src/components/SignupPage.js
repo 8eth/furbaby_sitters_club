@@ -8,7 +8,7 @@ import React, {useState} from 'react'
     const [fullName, setFullName] = useState("");
     const [image, setImage] = useState("");
     const [address, setAddress] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
+    const [number, setNumber] = useState("");
   
     function handleSubmit(e) {
       e.preventDefault();
@@ -21,10 +21,10 @@ import React, {useState} from 'react'
           username,
           password,
           password_confirmation: passwordConfirmation,
-          // full_name: fullname,
+          fullName,
           image,
           address,
-          // phone_number: number,
+          number,
         }),
       })
         .then((r) => r.json())
@@ -62,12 +62,12 @@ import React, {useState} from 'react'
                 onChange={(e) => setPasswordConfirmation(e.target.value)}
               />
               <label>Full Name</label>
-              {/* <input
+              <input
                 type="text"
                 id="name"
-                value={fullname}
+                value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-              /> */}
+              />
               <label>Image</label>
               <input
                 type="text"
@@ -85,13 +85,13 @@ import React, {useState} from 'react'
                 onChange={(e) => setAddress(e.target.value)}
               />
               <label>Phone Number</label>
-              {/* <input
+              <input
                 type="text"
                 id="number"
                 placeholder="###-###-####"
                 value={number}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-              /> */}
+                onChange={(e) => setNumber(e.target.value)}
+              />
               <br></br>
               <br></br>
               <button className="ui submit button center" type="submit">Submit</button>

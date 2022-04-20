@@ -2,11 +2,11 @@ import React from 'react'
 import NavBar from './NavBar'
 
 
-function AppointmentDetail() {
+function AppointmentDetail({logout}) {
   return (
     <div>
 
-      <NavBar/>
+      <NavBar logout={logout}/>
       Appointment Detail
 
 

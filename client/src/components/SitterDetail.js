@@ -9,10 +9,10 @@ function SitterDetail({sitter}) {
 
           <div className='ui card'>
             <img src={sitter.image} alt="sitter"/>
-            <h4>Name:{sitter.name}</h4>
-            <h6>Bio:{sitter.bio}</h6>
-            <h6>Email:{sitter.email}</h6>
-            <h6>Phone:{sitter.phone_number}</h6>
+            <h4>Name: {sitter.name}</h4>
+            <h6>Bio: {sitter.bio}</h6>
+            <h6>Email: {sitter.email}</h6>
+            <h6>Phone: {sitter.phone_number}</h6>
           </div>
 
           <button className="ui submit button center" type="submit" 

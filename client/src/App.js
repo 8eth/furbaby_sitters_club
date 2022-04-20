@@ -6,18 +6,19 @@ import LoginPage from "./components/LoginPage"
 import Logout from "./components/Logout"
 import SitterCalendar from "./components/SitterCalendar"
 import AppointmentDetail from "./components/AppointmentDetail"
-import NavBar from "./components/NavBar"
+
+import PetPage from "./components/PetPage"
 
 function App() {
   const [sitters, setSitters] = useState([])
   // const [clients, setClients] = useState([])
   const [appointments, setAppointments] = useState([])
-  // const [pets, setPets] = useState([])
+  const [pets, setPets] = useState([])
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
-  console.log(setIsAuthenticated)
+  // console.log(setIsAuthenticated)
   
   useEffect(() => {
     fetch('/authorize')
@@ -36,6 +37,10 @@ function App() {
           fetch("/appointments")
           .then((res) => res.json())
           .then(setAppointments);
+
+          fetch("/pets")
+          .then((res) => res.json())
+          .then(setPets);
         });
       }
       else {
@@ -45,15 +50,16 @@ function App() {
     });
   },[]);
 
-  // const logout = () => {
-  //   fetch('/logout',{
-  //       method:'DELETE'
-  //   })
-  //   .then(()=>{
-  //       setIsAuthenticated(false)
-  //       setUser(null)
-  //   })
-  // }
+  const logout = () => { 
+    console.log("running")
+    fetch('/logout',{
+        method:'DELETE'
+    })
+    .then(()=>{
+        setIsAuthenticated(false)
+        setUser(null)
+    })
+  }
 
   // console.log(sitters)
   // console.log(appointments)
@@ -85,13 +91,13 @@ function App() {
     <div className="background">
       <Switch>
       <Route exact path="/">
-        <LandingPage sitters={sitters}/>
+        <LandingPage sitters={sitters} logout={logout}/>
       </Route>
       <Route exact path="/calendar">
-        <SitterCalendar appointment={appointments}/>
+        <SitterCalendar appointment={appointments} logout={logout}/>
       </Route>
       <Route exact path="/appointmentdetails">
-          <AppointmentDetail appointments={appointments}/>
+          <AppointmentDetail appointments={appointments} logout={logout}/>
       </Route>
       <Route path="/signup">
           <SignupPage />
@@ -99,11 +105,10 @@ function App() {
       <Route path="/login">
           <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
       </Route>
-      {/* <Route path="/logout">
-          <NavBar />
-      </Route> */}
+      <Route path="/pets">
+        <PetPage pets={pets} logout={logout}/>
+      </Route>
       </Switch>
-      <NavBar setIsAuthenticated={setIsAuthenticated} setUser={setUser} user={user}/>
     </div>
   );
 }
