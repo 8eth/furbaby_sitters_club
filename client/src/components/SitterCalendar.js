@@ -46,6 +46,14 @@ function SitterCalendar({ logout, appointments}) {
   //   />
   // ))
 
+  const test = [
+    {
+      title: "Kitten",
+      allDay: true,
+      start: new Date("2022 04 06"),
+      end: new Date("2022 04 07")
+    }]
+console.log(test)
   return (
     <div className="background"> 
       <NavBar logout={logout}/>
@@ -122,11 +130,3 @@ export default SitterCalendar;
   
 //  export default SitterCalendar
 
-
-{/* // const appointments = [
-//   { */}
-//     title: "Kitten",
-//     allDay: true,
-//     start: new Date("2022 04 06"),
-//     end: new Date("2022 04 07")
-//   }

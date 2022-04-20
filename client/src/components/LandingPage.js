@@ -6,6 +6,7 @@ import SitterCalendar from "./SitterCalendar"
 
 
 function LandingPage({sitters, logout}) {
+  console.log(sitters)
 
   const mappedSitters = sitters.map((sitter) => 
     <SitterDetail

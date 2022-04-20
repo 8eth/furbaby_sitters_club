@@ -28,19 +28,6 @@ function App() {
         .then((user) => {
           setIsAuthenticated(true);
           setUser(user);
-          // console.log(user)
-          
-          fetch("/sitters")
-          .then((res) => res.json())
-          .then(setSitters);
-
-          fetch("/appointments")
-          .then((res) => res.json())
-          .then(setAppointments);
-
-          fetch("/pets")
-          .then((res) => res.json())
-          .then(setPets);
         });
       }
       else {
@@ -49,6 +36,20 @@ function App() {
     
     });
   },[]);
+
+  useEffect(() => {
+    fetch("/sitters")
+    .then((res) => res.json())
+    .then(setSitters);
+
+    fetch("/appointments")
+    .then((res) => res.json())
+    .then(setAppointments);
+
+    fetch("/pets")
+    .then((res) => res.json())
+    .then(setPets);
+  },[])
 
   const logout = () => { 
     console.log("running")

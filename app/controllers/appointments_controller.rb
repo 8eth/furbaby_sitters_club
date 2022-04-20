@@ -28,7 +28,9 @@ class AppointmentsController < ApplicationController
     private
 
     def appointment_params
-        params.permit(:datetime, :petcare, :client_id, :sitter_id)
+        params.permit(:datetime, :petcare, :client_id, :sitter_id
+        # :appt_start, :appt_end
+        )
     end
 
     def find_appointment

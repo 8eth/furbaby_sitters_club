@@ -291,6 +291,8 @@ Pet.create(
 puts "Making appointments🗒..."
 20.times {Appointment.create(
     datetime: Faker::Time.unique.forward(days: 23, period: :day, format: :long), 
+    # appt_start: Faker::Time.unique.forward(days: 23, period: :day, format: :long)
+    # appt_end: Faker::Time.unique.forward(days: 23, period: :day, format: :long)
     petcare: Faker::Lorem.paragraph, 
     client_id: Client.ids.sample,
     sitter_id: Sitter.ids.sample)} 

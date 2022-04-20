@@ -2,5 +2,7 @@ class Appointment < ApplicationRecord
   belongs_to :client
   belongs_to :sitter
 
-  validates :datetime, uniqueness: true
+  validates :datetime
+  # :appt_start, :appt_end
+  , uniqueness: true
 end

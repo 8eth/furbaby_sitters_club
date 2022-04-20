@@ -43,7 +43,7 @@ import React, {useState} from 'react'
         number: formData.number
       }
 
-      fetch("/signup", {
+      fetch(`/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
