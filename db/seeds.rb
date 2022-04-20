@@ -26,20 +26,20 @@ Client.create(
 puts "Making sitters👤..."
 5.times {Sitter.create(
     name: Faker::FunnyName.unique.name,
-    image: Faker::LoremFlickr.image(size: "290x348", search_terms: ['Marvel Characters']), 
+    image: Faker::LoremFlickr.image(size: "290x348", search_terms: ['people']), 
     phone_number: Faker::PhoneNumber.unique.cell_phone, 
     email: Faker::Internet.unique.email, 
     bio: Faker::Lorem.sentence(word_count: 5), 
     availability: true)}
 
-# puts "Making pets🐶🐱🐰..."
-# 20.times {Pet.create(name: Faker::JapaneseMedia::StudioGhibli.character, 
-# species: Faker::Creature::Animal.name, 
-# meds: Faker::Lorem.sentence(word_count: 7), 
-# fears: Faker::Lorem.sentence(word_count: 4), 
-# likes: Faker::Lorem.sentence(word_count: 3), 
-# image: Faker::LoremFlickr.image(size: "50x60", search_terms: ['pets']) ,
-# client_id: Client.ids.sample)}
+puts "Making pets🐶🐱🐰..."
+20.times {Pet.create(name: Faker::JapaneseMedia::StudioGhibli.character, 
+species: Faker::Creature::Animal.name, 
+meds: Faker::Lorem.sentence(word_count: 7), 
+fears: Faker::Lorem.sentence(word_count: 4), 
+likes: Faker::Lorem.sentence(word_count: 3), 
+image: Faker::LoremFlickr.image(size: "290x348", search_terms: ['pets']) ,
+client_id: Client.ids.sample)}
 
 puts "Making appointments🗒..."
 20.times {Appointment.create(
