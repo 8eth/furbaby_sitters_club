@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 
-
-  function SignupPage({ onLogin }) {
+  function SignupPage({ onLogin, setUser }) {
 
     const [formData, setFormData] = useState({
       username: "",

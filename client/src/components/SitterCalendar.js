@@ -46,15 +46,16 @@ function SitterCalendar({ logout, appointments}) {
   //   />
   // ))
 
-  const test = [
-    {
-      title: "Kitten",
-      allDay: true,
-      start: new Date("2022 04 06"),
-      end: new Date("2022 04 07")
-    }]
-console.log(test)
-  return (
+//   const test = [
+//     {
+//       title: "Kitten",
+//       allDay: true,
+//       start: new Date("2022 04 06"),
+//       end: new Date("2022 04 07")
+//     }]
+// console.log(test)
+  
+return (
     <div className="background"> 
       <NavBar logout={logout}/>
       <br></br>
@@ -66,8 +67,8 @@ console.log(test)
         <input type="text" style={{width: "20%", marginRight: "10px"}} 
         value={newAppt.title} onChange={(e) => setNewAppt({...newAppt, title: e.target.value})}/>
         {/* we're going to need to change this to appointment id instead of title?  */}
-        <DateTimePicker style= {{marginRight: "10px"}} selected={newAppt.datetime} onChange={(datetime)=> setNewAppt({...newAppt, datetime})} />
-        {/* <DateTimePicker style= {{marginRight: "10px"}} selected={newAppt.end} onChange={(end)=> setNewAppt({...newAppt, end})} value={newAppt} />  */}
+        <DateTimePicker style= {{marginRight: "10px"}} selected={newAppt.appt_start} onChange={(appt_start)=> setNewAppt({...newAppt, appt_start})} />
+        <DateTimePicker style= {{marginRight: "10px"}} selected={newAppt.appt_end} onChange={(appt_end)=> setNewAppt({...newAppt, appt_end})} /> 
         <button style={{marginTop: "10px"}} onClick={handleAddAppt}>Add Appointment</button>
       </div>
       <Calendar 
@@ -83,50 +84,4 @@ console.log(test)
 
 export default SitterCalendar;
 
-// function SitterCalendar({appointments}){
-//   const [checkInDate, setCheckInDate] = useState(null);
-//   const [checkOutDate, setCheckOutDate] = useState(null);
-
-//   const handleCheckInDate = (date) => {
-//     setCheckInDate(date);
-//     setCheckOutDate(null);
-//   };
-
-//   const handleCheckOutDate = (date) => {
-//     setCheckOutDate(date);
-//   };
-
-//   return (
-//     <div className="App">
-//       <div className="input-container">
-//         <div>
-//           <label>Check-in</label>
-//           <DateTimePicker
-//             selected={checkInDate}
-//             minDate={new Date()}
-//             onChange={handleCheckInDate}
-//           />
-//         </div>
-//         <div>
-//           <label>Check-out</label>
-//           <DateTimePicker
-//             selected={checkOutDate}
-//             minDate={checkInDate}
-//             onChange={handleCheckOutDate}
-//           />
-//         </div>
-//       </div>
-//       {checkInDate && checkOutDate && (
-//         <div className="summary">
-//           <p>
-//             You book a hotel from {moment(checkInDate).format("LL")} to{" "}
-//             {moment(checkOutDate).format("LL")}.
-//           </p>
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
-  
-//  export default SitterCalendar
 

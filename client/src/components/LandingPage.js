@@ -3,8 +3,6 @@ import NavBar from './NavBar'
 import SitterDetail from './SitterDetail'
 import SitterCalendar from "./SitterCalendar"
 
-
-
 function LandingPage({sitters, logout}) {
   console.log(sitters)
 

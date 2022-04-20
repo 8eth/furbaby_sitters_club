@@ -297,4 +297,45 @@ puts "Making appointments🗒..."
     client_id: Client.ids.sample,
     sitter_id: Sitter.ids.sample)} 
 
+
+    # Appointment.create(
+    #     appt_start: 
+    #     appt_end:
+    #     petcare: Faker::Lorem.paragraph, 
+    #     client_id: Client.ids.sample,
+    #     sitter_id: Sitter.ids.sample)
+    # )
+
+    # Appointment.create(
+    #     appt_start: 
+    #     appt_end:
+    #     petcare: Faker::Lorem.paragraph, 
+    #     client_id: Client.ids.sample,
+    #     sitter_id: Sitter.ids.sample)
+    # )
+
+    # Appointment.create(
+    #     appt_start: 
+    #     appt_end:
+    #     petcare: Faker::Lorem.paragraph, 
+    #     client_id: Client.ids.sample,
+    #     sitter_id: Sitter.ids.sample)
+    # )
+
+    # Appointment.create(
+    #     appt_start: 
+    #     appt_end:
+    #     petcare: Faker::Lorem.paragraph, 
+    #     client_id: Client.ids.sample,
+    #     sitter_id: Sitter.ids.sample)
+    # )
+
+    # Appointment.create(
+    #     appt_start: 
+    #     appt_end:
+    #     petcare: Faker::Lorem.paragraph, 
+    #     client_id: Client.ids.sample,
+    #     sitter_id: Sitter.ids.sample)
+    # )
+
 puts "Done seeding✔️!"

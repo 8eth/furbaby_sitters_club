@@ -9,27 +9,31 @@ function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
   const [error, setError] = useState([])
 
   function handleSubmit(e) {
+
     e.preventDefault();
+
     fetch(`/login`,{
       method:'POST',
-      headers:{'Content-Type': 'application/json'},
+      headers:{
+        'Content-Type': 'application/json'
+      },
       body:JSON.stringify({
         username, 
         password,
-        })
+      })
     })
-    .then(res => {
-      if(res.ok){
-        res.json()
-        .then(username=>{
-          setUser(username)
-          setIsAuthenticated(true)
-        })
-        
-      } else {
-        res.json()
-        .then(json => setError(json.error))
-      }
+      .then(res => {
+        if(res.ok){
+          res.json()
+          .then(username=>{
+            setUser(username)
+            setIsAuthenticated(true)
+          })
+          
+        } else {
+          res.json()
+          .then(json => setError(json.error))
+        }
     })
   }
 

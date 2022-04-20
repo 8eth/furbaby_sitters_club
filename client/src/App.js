@@ -18,8 +18,6 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
-  // console.log(setIsAuthenticated)
-  
   useEffect(() => {
     fetch('/authorize')
     .then((res) => {
@@ -29,30 +27,45 @@ function App() {
           setIsAuthenticated(true);
           setUser(user);
         });
+        fetch("/sitters")
+        .then((res) => res.json())
+        .then(setSitters);
+  
+        fetch("/appointments")
+        .then((res) => res.json())
+        .then(setAppointments);
+  
+        fetch("/pets")
+        .then((res) => res.json())
+        .then(setPets);
       }
       else {
         console.log("we recieved errors")
       }
-    
     });
   },[]);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   fetch("/sitters")
+  //   .then((res) => res.json())
+  //   .then(setSitters);
+
+  //   fetch("/appointments")
+  //   .then((res) => res.json())
+  //   .then(setAppointments);
+
+  //   fetch("/pets")
+  //   .then((res) => res.json())
+  //   .then(setPets);
+  // },[])
+
+  const allSitters = () =>{
     fetch("/sitters")
     .then((res) => res.json())
     .then(setSitters);
-
-    fetch("/appointments")
-    .then((res) => res.json())
-    .then(setAppointments);
-
-    fetch("/pets")
-    .then((res) => res.json())
-    .then(setPets);
-  },[])
+  }
 
   const logout = () => { 
-    console.log("running")
     fetch('/logout',{
         method:'DELETE'
     })
@@ -67,7 +80,6 @@ function App() {
   }
 
   if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
-
 
   return (
     <div className="background">
