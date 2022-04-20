@@ -21,7 +21,8 @@ Client.create(
     fullname:'Mickey Mouse', 
     image: "https://images.pexels.com/photos/10841753/pexels-photo-10841753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
     address:'105 Town Square, Main Street, Disneyland, California, 91521',
-    number:"877-764-2539")
+    number:"877-764-2539"
+)
 
 puts "Making sitters👤..."
 Sitter.create(
@@ -297,45 +298,45 @@ puts "Making appointments🗒..."
 #     client_id: Client.ids.sample,
 #     sitter_id: Sitter.ids.sample)} 
 
-
 Appointment.create(
-    appt_start: 2022-04-23T12:46:00.000Z,
-    appt_end: 2022-04-30T12:29:00.000Z,
+    appt_start: "April 23, 2022 12:30",
+    appt_end: "April 30, 2022 12:30",
     petcare: Faker::Lorem.paragraph, 
     client_id: Client.ids.sample,
-    sitter_id: Sitter.ids.sample)
+    sitter_id: Sitter.ids.sample
 )
 
-Appointment.create(
-    appt_start: 2022-05-05T16:00:00.000Z,
-    appt_end: 2022-05-09T09:47:00.000Z,
-    petcare: Faker::Lorem.paragraph, 
-    client_id: Client.ids.sample,
-    sitter_id: Sitter.ids.sample)
-)
 
-Appointment.create(
-    appt_start: 2022-05-01T10:36:00.000Z,
-    appt_end: 2022-05-02T16:43:00.000Z,
-    petcare: Faker::Lorem.paragraph, 
-    client_id: Client.ids.sample,
-    sitter_id: Sitter.ids.sample)
-)
+# Appointment.create(
+#     appt_start: 2022-05-05T16:00:00.000Z,
+#     appt_end: 2022-05-09T09:47:00.000Z,
+#     petcare: Faker::Lorem.paragraph, 
+#     client_id: Client.ids.sample,
+#     sitter_id: Sitter.ids.sample)
 
-Appointment.create(
-    appt_start: 2022-04-24T13:13:00.000Z
-    appt_end: 2022-05-07T09:32:00.000Z
-    petcare: Faker::Lorem.paragraph, 
-    client_id: Client.ids.sample,
-    sitter_id: Sitter.ids.sample)
-)
 
-Appointment.create(
-    appt_start: 2022-05-04T09:07:00.000Z,
-    appt_end:  2022-05-11T13:32:00.000Z,
-    petcare: Faker::Lorem.paragraph, 
-    client_id: Client.ids.sample,
-    sitter_id: Sitter.ids.sample)
-)
+# Appointment.create(
+#     appt_start: 2022-05-01T10:36:00.000Z,
+#     appt_end: 2022-05-02T16:43:00.000Z,
+#     petcare: Faker::Lorem.paragraph, 
+#     client_id: Client.ids.sample,
+#     sitter_id: Sitter.ids.sample)
+
+
+# Appointment.create(
+#     appt_start: 2022-04-24T13:13:00.000Z
+#     appt_end: 2022-05-07T09:32:00.000Z
+#     petcare: Faker::Lorem.paragraph, 
+#     client_id: Client.ids.sample,
+#     sitter_id: Sitter.ids.sample)
+
+
+# Appointment.create(
+#     appt_start: 2022-05-04T09:07:00.000Z,
+#     appt_end:  2022-05-11T13:32:00.000Z,
+#     petcare: Faker::Lorem.paragraph, 
+#     client_id: Client.ids.sample,
+#     sitter_id: Sitter.ids.sample)
+
 
 puts "Done seeding✔️!"

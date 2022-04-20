@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import NavBar from "./NavBar"
 import PetDetail from "./PetDetail"
 
-function PetPage({pets, logout}) {
+function PetPage({logout}) {
+  const [pets, setPets] = useState([])
+
+  useEffect(() => {
+    fetch("/pets")
+      .then((r) => r.json())
+      .then(setPets);
+  }, []);
+
     const petObj = pets.map((pet) => 
      <PetDetail 
      key={pet.id}

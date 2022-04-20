@@ -27,7 +27,7 @@ const dateLocalizer = dateFnsLocalizer({
   locales,
 })
 
-const localizer = momentLocalizer(moment)
+// const localizer = momentLocalizer(moment)
 
 function SitterCalendar({ logout, appointments}) {
   const [newAppt, setNewAppt] = useState(new Date());
@@ -35,27 +35,11 @@ function SitterCalendar({ logout, appointments}) {
 
   console.log(appointments)
 
-  function handleAddAppt(){
-    setAllAppointments([...allAppointments, newAppt])
-  }
+  // function handleAddAppt(){
+  //   setAllAppointments([...allAppointments, newAppt])
+  // }
 
-  // const mappedAppts = appointments.map((appointment) => (
-  //   <AppointmentDetail
-  //     key={appointment.id}
-  //     apps={appointment}
-  //   />
-  // ))
-
-//   const test = [
-//     {
-//       title: "Kitten",
-//       allDay: true,
-//       start: new Date("2022 04 06"),
-//       end: new Date("2022 04 07")
-//     }]
-// console.log(test)
-  
-return (
+  return (
     <div className="background"> 
       <NavBar logout={logout}/>
       <br></br>
@@ -69,14 +53,17 @@ return (
         {/* we're going to need to change this to appointment id instead of title?  */}
         <DateTimePicker style= {{marginRight: "10px"}} selected={newAppt.appt_start} onChange={(appt_start)=> setNewAppt({...newAppt, appt_start})} />
         <DateTimePicker style= {{marginRight: "10px"}} selected={newAppt.appt_end} onChange={(appt_end)=> setNewAppt({...newAppt, appt_end})} /> 
-        <button style={{marginTop: "10px"}} onClick={handleAddAppt}>Add Appointment</button>
+        <button style={{marginTop: "10px"}} 
+        // onClick={handleAddAppt}
+        >Add Appointment</button>
       </div>
       <Calendar 
-        localizer={localizer}
+        localizer={dateLocalizer}
         events={appointments} 
         startAccessor='start' 
         endAccessor='end'
         style={{height: 500, marginRight: "10px"}}
+        locales
       />
     </div>
   )

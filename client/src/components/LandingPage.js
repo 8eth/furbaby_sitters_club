@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import SitterDetail from './SitterDetail'
-import SitterCalendar from "./SitterCalendar"
+// import SitterCalendar from "./SitterCalendar"
 
-function LandingPage({sitters, logout}) {
-  console.log(sitters)
+function LandingPage({logout}) {
+  const [sitters, setSitters] = useState([])
+
+  useEffect(() => {
+    fetch("/sitters")
+      .then((r) => r.json())
+      .then(setSitters);
+  }, []);
 
   const mappedSitters = sitters.map((sitter) => 
     <SitterDetail

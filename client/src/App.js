@@ -10,10 +10,8 @@ import AppointmentDetail from "./components/AppointmentDetail"
 import PetPage from "./components/PetPage"
 
 function App() {
-  const [sitters, setSitters] = useState([])
   // const [clients, setClients] = useState([])
-  const [appointments, setAppointments] = useState([])
-  const [pets, setPets] = useState([])
+  // const [appointments, setAppointments] = useState([])
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
@@ -27,43 +25,13 @@ function App() {
           setIsAuthenticated(true);
           setUser(user);
         });
-        fetch("/sitters")
-        .then((res) => res.json())
-        .then(setSitters);
   
-        fetch("/appointments")
-        .then((res) => res.json())
-        .then(setAppointments);
-  
-        fetch("/pets")
-        .then((res) => res.json())
-        .then(setPets);
       }
       else {
-        console.log("we recieved errors")
+        console.log("We received errors...")
       }
     });
   },[]);
-
-  // useEffect(() => {
-  //   fetch("/sitters")
-  //   .then((res) => res.json())
-  //   .then(setSitters);
-
-  //   fetch("/appointments")
-  //   .then((res) => res.json())
-  //   .then(setAppointments);
-
-  //   fetch("/pets")
-  //   .then((res) => res.json())
-  //   .then(setPets);
-  // },[])
-
-  const allSitters = () =>{
-    fetch("/sitters")
-    .then((res) => res.json())
-    .then(setSitters);
-  }
 
   const logout = () => { 
     fetch('/logout',{
@@ -78,17 +46,17 @@ function App() {
   function handleAddNewUser(newUser) {
     setUser([...user, newUser])
   }
-
+  
   if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
 
   return (
     <div className="background">
       <Switch>
       <Route exact path="/">
-        <LandingPage sitters={sitters} logout={logout} appointment={appointments}/>
+        <LandingPage logout={logout}/>
       </Route>
       <Route exact path="/calendar">
-        <SitterCalendar appointments={appointments} logout={logout}/>
+        <SitterCalendar logout={logout}/>
       </Route>
       <Route exact path="/appointmentdetails">
           <AppointmentDetail logout={logout}/>
@@ -101,7 +69,7 @@ function App() {
           <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
       </Route>
       <Route path="/pets">
-        <PetPage pets={pets} logout={logout}/>
+        <PetPage logout={logout}/>
       </Route>
       </Switch>
     </div>

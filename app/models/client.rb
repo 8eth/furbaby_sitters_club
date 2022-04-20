@@ -4,6 +4,6 @@ class Client < ApplicationRecord
     has_many :sitters, through: :appointments
     has_many :pets, dependent: :destroy
 
-    validates :full_name, :address, :phone_number, :username, :password, presence: true
-    validates :full_name, :username, uniqueness: true
+    validates :fullname, :address, :number, :username, :password, presence: true
+    validates :fullname, :username, uniqueness: true
 end
