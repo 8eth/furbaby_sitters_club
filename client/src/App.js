@@ -93,9 +93,9 @@ function App() {
       <Route exact path="/">
         <LandingPage sitters={sitters} logout={logout}/>
       </Route>
-      {/* <Route exact path="/calendar">
+      <Route exact path="/calendar">
         <SitterCalendar appointment={appointments} logout={logout}/>
-      </Route> */}
+      </Route>
       <Route exact path="/appointmentdetails">
           <AppointmentDetail appointments={appointments} logout={logout}/>
       </Route>

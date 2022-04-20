@@ -32,6 +32,7 @@ Sitter.create(
     bio: Faker::Lorem.paragraph(sentence_count: 6), 
     availability: true
 )
+
 Sitter.create(
     name: "Circe M.",
     image: "https://images.pexels.com/photos/3224883/pexels-photo-3224883.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
@@ -40,6 +41,7 @@ Sitter.create(
     bio: Faker::Lorem.paragraph(sentence_count: 7), 
     availability: true
 )
+
 Sitter.create(
     name: "Luke S.",
     image: "https://images.pexels.com/photos/159557/leisure-wildlife-photography-pet-photography-dog-159557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
@@ -48,6 +50,7 @@ Sitter.create(
     bio: Faker::Lorem.paragraph(sentence_count: 4), 
     availability: true
 )
+
 Sitter.create(
     name: "Meg T.",
     image: "https://images.pexels.com/photos/1612846/pexels-photo-1612846.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
@@ -56,6 +59,7 @@ Sitter.create(
     bio: Faker::Lorem.paragraph(sentence_count: 9), 
     availability: true
 )
+
 Sitter.create(
     name: "Alex R.",
     image: "https://images.pexels.com/photos/2403104/pexels-photo-2403104.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
@@ -64,6 +68,7 @@ Sitter.create(
     bio: Faker::Lorem.paragraph(sentence_count: 5), 
     availability: true
 )
+
 # 5.times {Sitter.create(
 #     name: Faker::FunnyName.unique.name,
 #     image: Faker::LoremFlickr.image(size: "290x348", search_terms: ['people']), 
