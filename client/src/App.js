@@ -106,7 +106,7 @@ function App() {
           <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
       </Route>
       <Route path="/pets">
-        <PetPage pets={pets}/>
+        <PetPage pets={pets} logout={logout}/>
       </Route>
       </Switch>
     </div>

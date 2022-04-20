@@ -3,10 +3,10 @@ class CreateClients < ActiveRecord::Migration[6.1]
     create_table :clients do |t|
       t.string :username
       t.string :password_digest
-      t.string :full_name
+      t.string :fullname
       t.string :image
       t.string :address
-      t.string :phone_number
+      t.string :number
 
       t.timestamps
     end

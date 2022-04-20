@@ -29,10 +29,10 @@ ActiveRecord::Schema.define(version: 2022_04_18_153006) do
   create_table "clients", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.string "full_name"
+    t.string "fullname"
     t.string "image"
     t.string "address"
-    t.string "phone_number"
+    t.string "number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

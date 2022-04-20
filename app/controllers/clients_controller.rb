@@ -7,7 +7,6 @@ class ClientsController < ApplicationController
     end
 
     def show
-        # debugger
         test = Client.find_by(id: session[:client_id])
         render json: test, status: :ok
     end
@@ -35,7 +34,7 @@ class ClientsController < ApplicationController
     end
 
     def client_params
-        params.permit(:username, :password, :password_confirmation, :full_name, :image, :address, :phone_number)
+        params.permit(:username, :password, :password_confirmation, :fullname, :image, :address, :number)
     end
 
 end
