@@ -4,7 +4,9 @@ import SitterDetail from './SitterDetail'
 import SitterCalendar from "./SitterCalendar"
 
 
+
 function LandingPage({sitters, logout}) {
+
   const mappedSitters = sitters.map((sitter) => 
     <SitterDetail
       key={sitter.id}
@@ -16,6 +18,7 @@ function LandingPage({sitters, logout}) {
     <div className="background"> 
 
       <NavBar logout={logout}/>
+      
       <br></br>
       <h1>Welcome to Furbaby Sitters Club!!!</h1>
       <div>We worry about your furbaby so you don't have to!</div>

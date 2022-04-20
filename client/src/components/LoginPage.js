@@ -14,8 +14,8 @@ function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
       method:'POST',
       headers:{'Content-Type': 'application/json'},
       body:JSON.stringify({
-        username: username, 
-        password: password
+        username, 
+        password,
         })
     })
     .then(res => {
@@ -49,14 +49,14 @@ function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
                 onChange={(e) => setUsername(e.target.value)}
               />
             </label>
-            <label> Password
+            <label htmlFor="password">Password:</label>
               <input
-                type="text"
+                type="password"
+                id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <br></br>
-            </label>
+            <br></br>
             <br></br>
             <button className="ui submit button center" type="submit">Login</button>
           </form>

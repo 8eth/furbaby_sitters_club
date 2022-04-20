@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom"
 import LandingPage from "./components/LandingPage"
 import SignupPage from "./components/SignupPage"
 import LoginPage from "./components/LoginPage"
-import Logout from "./components/Logout"
+// import Logout from "./components/Logout"
 import SitterCalendar from "./components/SitterCalendar"
 import AppointmentDetail from "./components/AppointmentDetail"
 
@@ -28,7 +28,7 @@ function App() {
         .then((user) => {
           setIsAuthenticated(true);
           setUser(user);
-          console.log(user)
+          // console.log(user)
           
           fetch("/sitters")
           .then((res) => res.json())
@@ -61,28 +61,9 @@ function App() {
     })
   }
 
-  // console.log(sitters)
-  // console.log(appointments)
-
-//   
-// const mappedAppts = appointments.map((appointment) => (
-//       <AppointmentDetail
-//         key={appointment.id}
-//         appointment={appointment}
-//       />
-//     ))
-//   console.log(mappedAppts)
-
-// function handleAddAppointment(){
-//   setAllAppointments([...allAppointments, newAppointment])
-  
-//   }
-
-  // useEffect(() => {
-  //   fetch(baseUrl + "/pets")
-  //     .then((res) => res.json())
-  //     .then(console.log);
-  // }, []);
+  function handleAddNewUser(newUser) {
+    setUser([...user, newUser])
+  }
 
   if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
 
@@ -91,16 +72,17 @@ function App() {
     <div className="background">
       <Switch>
       <Route exact path="/">
-        <LandingPage sitters={sitters} logout={logout}/>
+        <LandingPage sitters={sitters} logout={logout} appointment={appointments}/>
       </Route>
       <Route exact path="/calendar">
-        <SitterCalendar appointment={appointments} logout={logout}/>
+        <SitterCalendar appointments={appointments} logout={logout}/>
       </Route>
       <Route exact path="/appointmentdetails">
-          <AppointmentDetail appointments={appointments} logout={logout}/>
+          <AppointmentDetail logout={logout}/>
       </Route>
       <Route path="/signup">
-          <SignupPage />
+          <SignupPage onLogin={handleAddNewUser}/>
+          {/* <SignupPage /> */}
       </Route>
       <Route path="/login">
           <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
@@ -112,6 +94,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
