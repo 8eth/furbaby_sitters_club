@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import SitterDetail from './SitterDetail'
+import { Header } from 'semantic-ui-react'
 // import SitterCalendar from "./SitterCalendar"
 
 function LandingPage({logout}) {
@@ -25,9 +26,10 @@ function LandingPage({logout}) {
       <NavBar logout={logout}/>
       
       <br></br>
-      <h1>Welcome to Furbaby Sitters Club!!!</h1>
+      <h1 className="logo">Furbaby Sitters Club</h1>
       <div>We worry about your furbaby so you don't have to!</div>
-      <h2>Sitters:</h2>
+      <h2>Meet the humans that will be taking care of your pets:</h2>
+      <br></br>
       <div className="form-border ui center aligned five row grid container"> 
         {mappedSitters}
       </div>

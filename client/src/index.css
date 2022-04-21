@@ -37,6 +37,7 @@ code {
 
 .background {
   background: rgb(213, 216, 242);
+  text-align: center;
 }
 
 .center-page {
@@ -49,3 +50,10 @@ code {
 .errors {
   color: red;
 }
+
+.logo {
+  font-family: 'Square Peg', cursive;
+  font-size: 80px;
+}
+
+

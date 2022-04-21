@@ -20,7 +20,8 @@ function PetPage({logout}) {
   return (
     <div>
         <NavBar logout={logout}/>
-        <h2>Pets:</h2>
+        <br></br>
+        <h2>Meet all the furbabies we take care of:</h2>
         <br></br>
         <div className="form-border ui center aligned five row grid container">{petObj}</div>
     </div>

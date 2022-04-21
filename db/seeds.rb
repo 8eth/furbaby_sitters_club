@@ -89,7 +89,7 @@ puts "Making pets🐶🐱🐰..."
 # client_id: Client.ids.sample)}
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Rhinoceros", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -99,7 +99,7 @@ Pet.create(
 )
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Cat", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -109,7 +109,7 @@ Pet.create(
 )
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Parrot", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -119,7 +119,7 @@ Pet.create(
 )    
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Elephant", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -129,7 +129,7 @@ Pet.create(
 )        
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Cat", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -139,7 +139,7 @@ Pet.create(
 )    
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Dog", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -149,7 +149,7 @@ Pet.create(
 )    
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Guinea Pig", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -159,7 +159,7 @@ Pet.create(
 )        
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Frog", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -169,7 +169,7 @@ Pet.create(
 )        
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Camel", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -179,7 +179,7 @@ Pet.create(
 )                
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Dog", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -189,7 +189,7 @@ Pet.create(
 )            
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Sheep", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -199,7 +199,7 @@ Pet.create(
 )                
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Dog", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -209,7 +209,7 @@ Pet.create(
 )            
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Fish", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -219,7 +219,7 @@ Pet.create(
 )                
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Chameleon", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -229,7 +229,7 @@ Pet.create(
 )                    
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Cat", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -239,7 +239,7 @@ Pet.create(
 )                
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Bunny", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -249,7 +249,7 @@ Pet.create(
 )                    
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Dog", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -259,7 +259,7 @@ Pet.create(
 )            
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Monkey", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -269,7 +269,7 @@ Pet.create(
 )                    
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Tiger", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
@@ -279,7 +279,7 @@ Pet.create(
 )                    
 
 Pet.create(
-    name: Faker::JapaneseMedia::StudioGhibli.character, 
+    name: Faker::FunnyName.name, 
     species: "Chicken", 
     meds: Faker::Lorem.sentence(word_count: 7), 
     fears: Faker::Lorem.sentence(word_count: 4), 
