@@ -1,9 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import AddEdit from "./AddEdit"
 
 function AppointmentCard({appointments, setAppointments, appointment}) {
+
+  const [showEditForm, setShowEditForm] = useState(false)
+
+  function handleEditForm(e, showDetail){
+    e.stopPropagation()
+    setShowEditForm(!showEditForm)
+  }
+
   const deleteAppt = (id) => {
-  // function handleDelete(id) {
     fetch(`/appointments/${id}`, {
       method: "DELETE",
     }).then((r) => {
@@ -17,18 +24,14 @@ function AppointmentCard({appointments, setAppointments, appointment}) {
       
     <div className="center aligned cards">
       <br></br>
-      
       <div className='ui card'>
         <h4>Start Date: {appointment.appt_start}</h4>
         <h4>End Date: {appointment.appt_end}</h4>
         <h4>Pet Care: {appointment.petcare}</h4>
           <button className="ui button" onClick={(e)=> deleteAppt(appointment.id)} >Cancel Appointment</button>
-          <button className="ui button" >Edit Appointment Details</button>
+          <button className="ui button" onClick={(e) => handleEditForm(e, showEditForm)}>Edit Appointment Details</button>
       </div>
-      <AddEdit
-        appointment={appointment}  
-        setAppointments={setAppointments}
-      />
+      {showEditForm && <AddEdit appointment={appointment} setAppointments={setAppointments}/>}
       <br></br>
     </div>
   )
