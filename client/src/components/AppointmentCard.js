@@ -2,14 +2,12 @@ import React from 'react'
 
 function AppointmentCard({appointment, deleteAppt}) {
 
-
-
   return (
+      
     <div className="center aligned cards">
       <br></br>
       <br></br>
       
-      <h3>Your Appointments</h3>
       <div className='ui card'>
         
         <h4>Start Date: {appointment.appt_start}</h4>

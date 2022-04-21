@@ -16,8 +16,7 @@ function AppointmentDetail({setIsAuthenticated, setUser}) {
       .then(setAppointments);
   }
 
-  const deleteAppt = (e, id) => {
-    e.preventDefault();
+  const deleteAppt = (id) => {
     fetch(`http://localhost:3000/appointments/${id}`, {
       method: 'DELETE',
     })
@@ -31,6 +30,11 @@ function AppointmentDetail({setIsAuthenticated, setUser}) {
     getAppts();
   }
 
+  // function handleDeleteBook(deletedBook) {
+  //   const updatedBooks = books.filter((book) => book !== deletedBook)
+  //   setBooks(updatedBooks)
+  // }
+
 
   const mappedAppts = appointments.map((appointment) => (
     <AppointmentCard
@@ -43,7 +47,12 @@ function AppointmentDetail({setIsAuthenticated, setUser}) {
   return (
     <div>
       <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
-      {mappedAppts}
+      <br></br>
+      <br></br>
+      <h3>Your Appointments</h3>
+      <div className='ui center aligned grid container'>
+        {mappedAppts}
+      </div>
     </div>
   );
 }
