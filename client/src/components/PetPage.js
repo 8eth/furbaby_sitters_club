@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import NavBar from "./NavBar"
 import PetDetail from "./PetDetail"
 
-function PetPage({logout}) {
+function PetPage({setIsAuthenticated, setUser}) {
   const [pets, setPets] = useState([])
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function PetPage({logout}) {
     )
   return (
     <div>
-        <NavBar logout={logout}/>
+        <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
         <br></br>
         <h2>Meet all the furbabies we take care of:</h2>
         <br></br>

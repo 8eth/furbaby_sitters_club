@@ -29,15 +29,15 @@ function App() {
     });
   },[]);
 
-  const logout = () => { 
-    fetch('/logout',{
-        method:'DELETE'
-    })
-    .then(()=>{
-        setIsAuthenticated(false)
-        setUser(null)
-    })
-  }
+  // const logout = () => { 
+  //   fetch('/logout',{
+  //       method:'DELETE'
+  //   })
+  //   .then(()=>{
+  //       setIsAuthenticated(false)
+  //       setUser(null)
+  //   })
+  // }
 
   function handleAddNewUser(newUser) {
     setUser([...user, newUser])
@@ -50,13 +50,13 @@ function App() {
     <div className="background">
       <Switch>
       <Route exact path="/">
-        <LandingPage logout={logout}/>
+        <LandingPage setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
       </Route>
       {/* <Route exact path="/calendar">
         <SitterCalendar logout={logout}/>
       </Route> */}
       <Route exact path="/appointmentdetails">
-          <AppointmentDetail logout={logout}/>
+          <AppointmentDetail setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
       </Route>
       <Route path="/signup">
           <SignupPage onLogin={handleAddNewUser}/>
@@ -66,7 +66,7 @@ function App() {
           <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
       </Route>
       <Route path="/pets">
-        <PetPage logout={logout}/>
+        <PetPage setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
       </Route>
       </Switch>
     </div>

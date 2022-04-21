@@ -29,7 +29,7 @@
 
 // // const localizer = momentLocalizer(moment)
 
-// function SitterCalendar({ logout, appointments}) {
+// function SitterCalendar({ setIsAuthenticated, setUser, appointments}) {
 //   const [newAppt, setNewAppt] = useState(new Date());
 //   const [allAppointments, setAllAppointments] = useState(appointments)
 
@@ -41,7 +41,7 @@
 
 //   return (
 //     <div className="background"> 
-//       <NavBar logout={logout}/>
+//       <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
 //       <br></br>
 //       <br></br>
 //       <br></br>

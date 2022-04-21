@@ -3,7 +3,7 @@ import NavBar from './NavBar'
 import AppointmentCard from './AppointmentCard'
 
 
-function AppointmentDetail({logout}) {
+function AppointmentDetail({setIsAuthenticated, setUser}) {
   const [appointments, setAppointments] = useState([])
 
   useEffect(() => {
@@ -42,7 +42,7 @@ function AppointmentDetail({logout}) {
   
   return (
     <div>
-      <NavBar logout={logout}/>
+      <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
       {mappedAppts}
     </div>
   );
