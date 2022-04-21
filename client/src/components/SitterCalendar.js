@@ -63,7 +63,7 @@ function SitterCalendar({ logout }) {
       <br></br>
       <h1>Calendar</h1>
       <h2>Schedule New Appointment</h2>
-      <AddAppointment />
+      <AddAppointment appointments={appointments} setAppointments={setAppointments}/>
    
       <Calendar 
         localizer={localizer}

@@ -43,7 +43,7 @@ function AddEdit({appointment}) {
                     <label>Start Date</label>
                     <input 
                         name="appt_start" 
-                        type="text"
+                        type="date"
                         id={FormData.appt_start}
                         value={apptFormData.appt_start}
                         onChange={(e) => handleChange(e)}
@@ -53,7 +53,7 @@ function AddEdit({appointment}) {
                     <label>End Date</label>
                     <input 
                         name="appt_end" 
-                        type="text" 
+                        type="date" 
                         id={FormData.appt_end}
                         value={apptFormData.appt_end}
                         onChange={(e) => handleChange(e)}
