@@ -11,8 +11,7 @@ function AppointmentDetail({setIsAuthenticated, setUser}) {
   },[])
 
   const getAppts = () => {
-    // fetch(`http://localhost3000/appointments/${appointment.id}`)
-    fetch(`appointments`)
+    fetch(`/appointments`)
 
       .then((r) => r.json())
       .then(setAppointments);
@@ -53,7 +52,8 @@ function AppointmentDetail({setIsAuthenticated, setUser}) {
     <AppointmentCard
       key={appointment.id}
       appointment={appointment}
-      // deleteAppt={deleteAppt}
+      appointments={appointments}
+      setAppointments={setAppointments}
     /> 
   ))
   

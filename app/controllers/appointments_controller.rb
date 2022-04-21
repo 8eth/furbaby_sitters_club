@@ -17,7 +17,7 @@ class AppointmentsController < ApplicationController
 
     def update
         @appointment.update!(appointment_params)
-        render json: appointment, status: :accepted
+        render json: @appointment, status: :accepted
     end
 
     def destroy
@@ -29,8 +29,7 @@ class AppointmentsController < ApplicationController
 
     def appointment_params
         params.permit(:petcare, :client_id, :sitter_id, 
-        # :appt_start, :appt_end
-        )
+        :appt_start, :appt_end, :title)
     end
 
     def find_appointment

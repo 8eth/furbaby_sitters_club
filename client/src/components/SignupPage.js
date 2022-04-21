@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-  function SignupPage({ onLogin, setUser }) {
+  function SignupPage({ onLogin }) {
     const [errors, setErrors] = useState([]);
 
     const [formData, setFormData] = useState({

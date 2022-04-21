@@ -39,12 +39,12 @@ function App() {
   //   })
   // }
 
-  function handleAddNewUser(newUser) {
+  function onLogin(newUser) {
     setUser([...user, newUser])
   }
   
   if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
-  if (!user) return <LoginPage onLogin={setUser} />
+  if (!user) return <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
 
   return (
     <div className="background">
@@ -56,11 +56,11 @@ function App() {
           />
         </Route>
 
-        {/* <Route exact path="/calendar">
+        <Route exact path="/calendar">
             <SitterCalendar 
-              logout={logout}
+             
             />
-        </Route> */}
+        </Route>
 
         <Route exact path="/appointmentdetails">
           <AppointmentDetail 
@@ -71,7 +71,7 @@ function App() {
 
         <Route path="/signup">
           <SignupPage 
-            onLogin={handleAddNewUser}
+            onLogin={onLogin}
           />
         </Route>
 

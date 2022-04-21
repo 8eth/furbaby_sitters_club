@@ -69,7 +69,7 @@ function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
           </form>
         </div>
     </div>
-    <SignupPage />
+    <SignupPage onLogin={setUser}/>
     </div>
   );
 

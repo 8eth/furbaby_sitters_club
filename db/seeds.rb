@@ -290,6 +290,45 @@ Pet.create(
 
 
 puts "Making appointments🗒..."
+Appointment.create(
+    title: "GiGi",
+    appt_start: "2022-05-05T16:00:00.000Z",
+    appt_end: "2022-05-09T09:47:00.000Z",
+    petcare: Faker::Lorem.paragraph, 
+    client_id: Client.ids.sample,
+    sitter_id: Sitter.ids.sample)
+
+
+Appointment.create(
+    title: "Zoe",
+    appt_start: "2022-05-01T10:36:00.000Z",
+    appt_end: "2022-05-02T16:43:00.000Z",
+    petcare: Faker::Lorem.paragraph, 
+    client_id: Client.ids.sample,
+    sitter_id: Sitter.ids.sample)
+
+
+Appointment.create(
+    title: "Shrinkhead",
+    appt_start: "2022-04-24T13:13:00.000Z",
+    appt_end: "2022-05-07T09:32:00.000Z",
+    petcare: Faker::Lorem.paragraph, 
+    client_id: Client.ids.sample,
+    sitter_id: Sitter.ids.sample)
+
+
+Appointment.create(
+    title: "Rhino",
+    appt_start: "2022-05-04T09:07:00.000Z",
+    appt_end:  "2022-05-11T13:32:00.000Z",
+    petcare: Faker::Lorem.paragraph, 
+    client_id: Client.ids.sample,
+    sitter_id: Sitter.ids.sample)
+
+
+
+
+
 # 20.times {Appointment.create(
 #     datetime: Faker::Time.unique.forward(days: 23, period: :day, format: :long), 
 #     # appt_start: Faker::Time.unique.forward(days: 23, period: :day, format: :long)
@@ -298,44 +337,44 @@ puts "Making appointments🗒..."
 #     client_id: Client.ids.sample,
 #     sitter_id: Sitter.ids.sample)} 
 
-Appointment.create(
-    appt_start: "April 23, 2022 12:30",
-    appt_end: "April 30, 2022 12:30",
-    petcare: Faker::Lorem.paragraph, 
-    client_id: Client.ids.sample,
-    sitter_id: Sitter.ids.sample
-)
+# Appointment.create(
+#     appt_start: "April 23, 2022 12:30",
+#     appt_end: "April 30, 2022 12:30",
+#     petcare: Faker::Lorem.paragraph, 
+#     client_id: Client.ids.sample,
+#     sitter_id: Sitter.ids.sample
+# )
 
-Appointment.create(
-    appt_start: "May 5, 2022 16:00",
-    appt_end: "May 9, 2022 9:45",
-    petcare: Faker::Lorem.paragraph, 
-    client_id: Client.ids.sample,
-    sitter_id: Sitter.ids.sample
-)
+# Appointment.create(
+#     appt_start: "May 5, 2022 16:00",
+#     appt_end: "May 9, 2022 9:45",
+#     petcare: Faker::Lorem.paragraph, 
+#     client_id: Client.ids.sample,
+#     sitter_id: Sitter.ids.sample
+# )
 
-Appointment.create(
-    appt_start: "May 1, 2022 10:30",
-    appt_end: "May 2, 2022 16:45",
-    petcare: Faker::Lorem.paragraph, 
-    client_id: Client.ids.sample,
-    sitter_id: Sitter.ids.sample
-)
+# Appointment.create(
+#     appt_start: "May 1, 2022 10:30",
+#     appt_end: "May 2, 2022 16:45",
+#     petcare: Faker::Lorem.paragraph, 
+#     client_id: Client.ids.sample,
+#     sitter_id: Sitter.ids.sample
+# )
 
-Appointment.create(
-    appt_start: "April 24, 2022 13:15",
-    appt_end: "May 7, 2022 9:30",
-    petcare: Faker::Lorem.paragraph, 
-    client_id: Client.ids.sample,
-    sitter_id: Sitter.ids.sample
-)
+# Appointment.create(
+#     appt_start: "April 24, 2022 13:15",
+#     appt_end: "May 7, 2022 9:30",
+#     petcare: Faker::Lorem.paragraph, 
+#     client_id: Client.ids.sample,
+#     sitter_id: Sitter.ids.sample
+# )
 
-Appointment.create(
-    appt_start: "May 4, 2022 9:00",
-    appt_end:  "May 11, 2022 13:30",
-    petcare: Faker::Lorem.paragraph, 
-    client_id: Client.ids.sample,
-    sitter_id: Sitter.ids.sample
-)
+# Appointment.create(
+#     appt_start: "May 4, 2022 9:00",
+#     appt_end:  "May 11, 2022 13:30",
+#     petcare: Faker::Lorem.paragraph, 
+#     client_id: Client.ids.sample,
+#     sitter_id: Sitter.ids.sample
+# )
 
 puts "Done seeding✔️!"
