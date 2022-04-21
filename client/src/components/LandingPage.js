@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import SitterDetail from './SitterDetail'
-import { Header } from 'semantic-ui-react'
 // import SitterCalendar from "./SitterCalendar"
 
 function LandingPage({setIsAuthenticated, setUser}) {

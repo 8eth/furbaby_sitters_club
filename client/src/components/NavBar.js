@@ -13,19 +13,9 @@ function NavBar({setIsAuthenticated, setUser}) {
     })
   }
   return ( 
-      <div>
-      <NavLink
-        to="/"
-        onClick={()=>logout()}
-        className="ui right floated button"
-        activeStyle={{
-          background: "#E6E6E8",
-          color: "#5a5a5a",
-        }}
-      >
-        Logout
-      </NavLink>
-
+    <div>
+      <button className="ui right floated button" onClick={()=>logout()}>Logout</button>
+      
       <NavLink
         to="/pets"
         exact
@@ -69,7 +59,7 @@ function NavBar({setIsAuthenticated, setUser}) {
       >
         Home
       </NavLink>
-      </div>
+    </div>
   )
 }
 

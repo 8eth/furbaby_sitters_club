@@ -60,7 +60,6 @@ function App() {
       </Route>
       <Route path="/signup">
           <SignupPage onLogin={handleAddNewUser}/>
-          {/* <SignupPage /> */}
       </Route>
       <Route path="/login">
           <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
