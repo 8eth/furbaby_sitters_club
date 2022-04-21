@@ -6,10 +6,9 @@ function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState('')
    
-  const [error, setError] = useState([])
+  const [errors, setErrors] = useState([])
 
   function handleSubmit(e) {
-
     e.preventDefault();
 
     fetch(`/login`,{
@@ -29,10 +28,9 @@ function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
             setUser(username)
             setIsAuthenticated(true)
           })
-          
         } else {
           res.json()
-          .then(json => setError(json.error))
+          .then((err) => setErrors(err.errors))
         }
     })
   }
@@ -61,6 +59,11 @@ function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
                 onChange={(e) => setPassword(e.target.value)}
               />
             <br></br>
+            <div>
+              {errors.map((error) => (
+                <ul className="errors">{error}</ul>
+              ))}
+            </div>
             <br></br>
             <button className="ui submit button center" type="submit">Login</button>
           </form>

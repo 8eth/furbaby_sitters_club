@@ -10,9 +10,6 @@ import AppointmentDetail from "./components/AppointmentDetail"
 import PetPage from "./components/PetPage"
 
 function App() {
-  // const [clients, setClients] = useState([])
-  // const [appointments, setAppointments] = useState([])
-
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
@@ -25,7 +22,6 @@ function App() {
           setIsAuthenticated(true);
           setUser(user);
         });
-  
       }
       else {
         console.log("We received errors...")
@@ -48,6 +44,7 @@ function App() {
   }
   
   if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
+  if (!user) return <LoginPage onLogin={setUser} />
 
   return (
     <div className="background">
@@ -55,9 +52,9 @@ function App() {
       <Route exact path="/">
         <LandingPage logout={logout}/>
       </Route>
-      <Route exact path="/calendar">
+      {/* <Route exact path="/calendar">
         <SitterCalendar logout={logout}/>
-      </Route>
+      </Route> */}
       <Route exact path="/appointmentdetails">
           <AppointmentDetail logout={logout}/>
       </Route>

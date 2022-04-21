@@ -45,3 +45,7 @@ code {
   width: 50%;
   padding: 100px;
 }
+
+.errors {
+  color: red;
+}

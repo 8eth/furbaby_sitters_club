@@ -17,7 +17,7 @@ function NavBar({setIsAuthenticated, setUser, logout}) {
       
       <div>
       <NavLink
-        to="/"
+        to="/login"
         onClick={()=>logout()}
         className="ui right floated button"
         activeStyle={{
