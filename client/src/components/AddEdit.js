@@ -1,8 +1,8 @@
-import React,{ useState }  from 'react'
+import React,{ useState } from 'react'
+import { useHistory } from "react-router-dom";
 
-function AddEdit({appointment}) {
- 
-    const [newAppointment, setNewAppointment] = useState(appointment)
+function AddEdit({ appointment}) {
+    let history = useHistory();
 
     const [apptFormData, setApptFormData] = useState ({ 
         appt_start: appointment.appt_start,
@@ -23,8 +23,8 @@ function AddEdit({appointment}) {
         const editedAppt = {
             appt_start: apptFormData.appt_start,
             appt_end: apptFormData.appt_end,
-            petcare: apptFormData.petcare
-        }
+            petcare: apptFormData.petcare 
+       }
 
         fetch(`/appointments/${appointment.id}`, {
             method: "PATCH",
@@ -33,7 +33,8 @@ function AddEdit({appointment}) {
             },
             body: JSON.stringify(editedAppt),
         })
-        .then(() => setNewAppointment((newAppointment) => editedAppt))
+        // .then(() => setAppointments(editedAppt))
+        history.push("/appointmentdetails")
     }
 
     return (

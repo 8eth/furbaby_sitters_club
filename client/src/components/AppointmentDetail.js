@@ -28,8 +28,6 @@ function AppointmentDetail({setIsAuthenticated, setUser}) {
   return (
     <div>
       <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
-      <br></br>
-      <br></br>
       <h3>Your Appointments</h3>
       <div className='ui center aligned grid container'>
         {mappedAppts}    

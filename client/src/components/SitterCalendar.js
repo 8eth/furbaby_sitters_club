@@ -55,9 +55,6 @@ function SitterCalendar({ setIsAuthenticated, setUser }) {
   return (
     <div className="background"> 
       <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
-      <br></br>
-      <br></br>
-      <br></br>
       <h1>Calendar</h1>
       <h2>Schedule New Appointment</h2>
       <AddAppointment appointments={appointments} setAppointments={setAppointments}/>

@@ -66,7 +66,6 @@ function AddAppointment({appointments, setAppointments}) {
   return (
     // <div>AddAppointment</div>
     <div className="background">
-    <h3 className="center-content">Signup</h3>
         <div className="form-border center-content">
           <div className="ui grid">
             <form 

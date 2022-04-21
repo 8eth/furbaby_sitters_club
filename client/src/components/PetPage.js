@@ -20,7 +20,6 @@ function PetPage({setIsAuthenticated, setUser}) {
   return (
     <div>
         <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
-        <br></br>
         <h2>Meet all the furbabies we take care of:</h2>
         <br></br>
         <div className="ui center aligned grid container">
