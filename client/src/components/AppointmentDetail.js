@@ -11,36 +11,49 @@ function AppointmentDetail({setIsAuthenticated, setUser}) {
   },[])
 
   const getAppts = () => {
-    fetch("/appointments")
+    // fetch(`http://localhost3000/appointments/${appointment.id}`)
+    fetch(`appointments`)
+
       .then((r) => r.json())
       .then(setAppointments);
   }
 
-  const deleteAppt = (id) => {
-    fetch(`http://localhost:3000/appointments/${id}`, {
-      method: 'DELETE',
-    })
-    .then(res => res.json())
-    .then(deletedAppt => onDeletedAppt(deletedAppt))
+  // console.log(appointments)
+
+  // const deleteAppt = (id) => {
+  //   fetch(`/appointments/${id}`, {
+  //     method: 'DELETE',
+  //   })
+  //   .then(res => res.json())
+  //   .then(deletedAppt => onDeletedAppt(deletedAppt))
       
-  };
+  // };
 
-  const onDeletedAppt = (appointment) => {
-    alert(`Appointment ${appointment.id} deleted`)
-    getAppts();
-  }
-
-  // function handleDeleteBook(deletedBook) {
-  //   const updatedBooks = books.filter((book) => book !== deletedBook)
-  //   setBooks(updatedBooks)
+  // const deleteAppt = (id) => {
+  // // function handleDelete(id) {
+  //   fetch(`/appointments/${id}`, {
+  //     method: "DELETE",
+  //   }).then((r) => {
+  //     if (r.ok) {
+  //       setAppointments((appointment) =>
+  //         appointments.filter((appointment) => appointment.id !== id)
+  //       );
+  //     }
+  //   });
   // }
 
+  // function onDeletedAppt(deletedAppt) {
+  //   const updatedAppts = appointments.filter((appointment) => appointment !== deletedAppt)
+  //   setAppointments(updatedAppts)
+  // }
+
+  
 
   const mappedAppts = appointments.map((appointment) => (
     <AppointmentCard
       key={appointment.id}
       appointment={appointment}
-      deleteAppt={deleteAppt}
+      // deleteAppt={deleteAppt}
     /> 
   ))
   
@@ -51,7 +64,7 @@ function AppointmentDetail({setIsAuthenticated, setUser}) {
       <br></br>
       <h3>Your Appointments</h3>
       <div className='ui center aligned grid container'>
-        {mappedAppts}
+        {mappedAppts}    
       </div>
     </div>
   );

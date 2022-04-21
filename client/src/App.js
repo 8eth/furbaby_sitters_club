@@ -49,24 +49,46 @@ function App() {
   return (
     <div className="background">
       <Switch>
-      <Route exact path="/">
-        <LandingPage setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
-      </Route>
-      {/* <Route exact path="/calendar">
-        <SitterCalendar logout={logout}/>
-      </Route> */}
-      <Route exact path="/appointmentdetails">
-          <AppointmentDetail setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
-      </Route>
-      <Route path="/signup">
-          <SignupPage onLogin={handleAddNewUser}/>
-      </Route>
-      <Route path="/login">
-          <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
-      </Route>
-      <Route path="/pets">
-        <PetPage setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
-      </Route>
+        <Route exact path="/">
+          <LandingPage 
+            setUser={setUser} 
+            setIsAuthenticated={setIsAuthenticated}
+          />
+        </Route>
+
+        {/* <Route exact path="/calendar">
+            <SitterCalendar 
+              logout={logout}
+            />
+        </Route> */}
+
+        <Route exact path="/appointmentdetails">
+          <AppointmentDetail 
+            setUser={setUser} 
+            setIsAuthenticated={setIsAuthenticated}
+          />
+        </Route>
+
+        <Route path="/signup">
+          <SignupPage 
+            onLogin={handleAddNewUser}
+          />
+        </Route>
+
+        <Route path="/login">
+          <LoginPage 
+            setUser={setUser} 
+            setIsAuthenticated={setIsAuthenticated} 
+          />
+        </Route>
+
+        <Route path="/pets">
+          <PetPage 
+            setUser={setUser} 
+            setIsAuthenticated={setIsAuthenticated}
+          />
+        </Route>
+
       </Switch>
     </div>
   );

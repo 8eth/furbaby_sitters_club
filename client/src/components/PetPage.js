@@ -12,10 +12,10 @@ function PetPage({setIsAuthenticated, setUser}) {
   }, []);
 
     const petObj = pets.map((pet) => 
-     <PetDetail 
-     key={pet.id}
-     pet={pet}
-     />
+      <PetDetail 
+        key={pet.id}
+        pet={pet}
+      />
     )
   return (
     <div>
@@ -23,7 +23,9 @@ function PetPage({setIsAuthenticated, setUser}) {
         <br></br>
         <h2>Meet all the furbabies we take care of:</h2>
         <br></br>
-        <div className="form-border ui center aligned five row grid container">{petObj}</div>
+        <div className="ui center aligned grid container">
+          {petObj}
+        </div>
     </div>
   )
 }
