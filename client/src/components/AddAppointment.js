@@ -17,8 +17,8 @@ function AddAppointment({appointments, setAppointments}) {
     appt_start: "",
     appt_end: "",
     petcare: "",
-    client_id: "",
-    sitter_id: ""
+    // client_id: "",
+    // sitter_id: ""
   }
   
   function onCreateAppt(newAppt) {
@@ -52,9 +52,8 @@ function AddAppointment({appointments, setAppointments}) {
       } else {
           r.json().then((err) => setErrors(err.errors));
       } 
-      // .then(setFormData(initialFormState));
     })
-    
+    .then(setFormData(initialFormState));
   }
 
   function handleChange(e) {

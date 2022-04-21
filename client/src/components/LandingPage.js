@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import SitterDetail from './SitterDetail'
-// import SitterCalendar from "./SitterCalendar"
 
 function LandingPage({setIsAuthenticated, setUser}) {
   const [sitters, setSitters] = useState([])
@@ -23,9 +22,8 @@ function LandingPage({setIsAuthenticated, setUser}) {
     <div className="background"> 
 
       <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
-      
+
       <br></br>
-      <h1 className="logo">Furbaby Sitters Club</h1>
       <div>We worry about your pet so you don't have to!</div>
       <h2>Meet the humans that will be taking care of your pets:</h2>
       <br></br>

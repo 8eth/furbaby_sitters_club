@@ -14,23 +14,32 @@ function NavBar({setIsAuthenticated, setUser}) {
   }
   return ( 
     <div>
-      <button className="ui right floated button" onClick={()=>logout()}>Logout</button>
-      
-      <NavLink
-        to="/pets"
+        <NavLink
+        to="/"
         exact
-        className="ui right floated button"
+        className="ui center floated button"
         activeStyle={{
           background: "#E6E6E8",
         }}
       >
-        Pets
+        Home
+      </NavLink> 
+
+      <NavLink
+        to="/calendar"
+        exact
+        className="ui center floated button"
+        activeStyle={{
+          background: "#E6E6E8",
+        }}
+      >
+        Calendar
       </NavLink>
       
       <NavLink
         to="/appointmentdetails"
         exact
-        className="ui right floated button"
+        className="ui center floated button"
         activeStyle={{
           background: "#E6E6E8",
         }}
@@ -39,26 +48,18 @@ function NavBar({setIsAuthenticated, setUser}) {
       </NavLink>
 
       <NavLink
-        to="/calendar"
+        to="/pets"
         exact
-        className="ui right floated button"
+        className="ui center floated button"
         activeStyle={{
           background: "#E6E6E8",
         }}
       >
-        Calendar
+        Pets
       </NavLink>
 
-      <NavLink
-        to="/"
-        exact
-        className="ui right floated button"
-        activeStyle={{
-          background: "#E6E6E8",
-        }}
-      >
-        Home
-      </NavLink>
+      <button className="ui center floated button" onClick={()=>logout()}>Logout</button>
+
     </div>
   )
 }

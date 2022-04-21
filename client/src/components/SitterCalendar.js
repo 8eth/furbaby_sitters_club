@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Calendar, momentLocalizer, dateFnsLocalizer } from 'react-big-calendar'
+import {Calendar, momentLocalizer, dateFnsLocalizer, TimeGrid } from 'react-big-calendar'
 import format from "date-fns/format";
 import parse from "date-fns/parse";
 import startOfWeek from 'date-fns/startOfWeek';
@@ -39,25 +39,22 @@ const appts = [
 ]
 const localizer = momentLocalizer(moment)
 
-function SitterCalendar({ logout }) {
+function SitterCalendar({ setIsAuthenticated, setUser }) {
 
   const [appointments, setAppointments] = useState([])
   // const [allAppointments, setAllAppointments] = useState(appointments)
   
-
   useEffect(() => {
       fetch("/appointments")
       .then((r) => r.json())
       .then(setAppointments)
   }, [])
 
-  console.log(appointments)
-
- 
+  // console.log(appointments)
 
   return (
     <div className="background"> 
-      <NavBar logout={logout}/>
+      <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
       <br></br>
       <br></br>
       <br></br>

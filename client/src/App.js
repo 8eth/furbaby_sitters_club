@@ -29,16 +29,6 @@ function App() {
     });
   },[]);
 
-  // const logout = () => { 
-  //   fetch('/logout',{
-  //       method:'DELETE'
-  //   })
-  //   .then(()=>{
-  //       setIsAuthenticated(false)
-  //       setUser(null)
-  //   })
-  // }
-
   function onLogin(newUser) {
     setUser([...user, newUser])
   }
@@ -47,7 +37,10 @@ function App() {
   if (!user) return <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
 
   return (
+    
     <div className="background">
+      <h1 className="logo">Furbaby Sitters Club</h1>
+
       <Switch>
         <Route exact path="/">
           <LandingPage 
@@ -58,7 +51,8 @@ function App() {
 
         <Route exact path="/calendar">
             <SitterCalendar 
-             
+             setUser={setUser} 
+             setIsAuthenticated={setIsAuthenticated}
             />
         </Route>
 
@@ -90,6 +84,7 @@ function App() {
         </Route>
 
       </Switch>
+      
     </div>
   );
 }
