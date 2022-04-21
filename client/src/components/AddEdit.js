@@ -1,17 +1,14 @@
 import React,{ useState }  from 'react'
 
-function AddEdit({appointment, setAppointments}) {
+function AddEdit({appointment}) {
+ 
+    const [newAppointment, setNewAppointment] = useState(appointment)
+
     const [apptFormData, setApptFormData] = useState ({ 
         appt_start: appointment.appt_start,
         appt_end: appointment.appt_end,
         petcare: appointment.petcare
     })
-
-    // const initialFormState = {
-    //     appt_start: "",
-    //     appt_end: "",
-    //     petcare: ""
-    // }
 
     function handleChange(e) {
         setApptFormData({
@@ -36,10 +33,7 @@ function AddEdit({appointment, setAppointments}) {
             },
             body: JSON.stringify(editedAppt),
         })
-        .then(res => res.json())
-        // .then(setAppointments(editedAppt))
-        // .then(setApptFormData(initialFormState))
-        // .then(console.log)
+        .then(() => setNewAppointment((newAppointment) => editedAppt))
     }
 
     return (

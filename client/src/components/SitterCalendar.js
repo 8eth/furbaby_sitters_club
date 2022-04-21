@@ -14,6 +14,7 @@ import dateFns from 'react-big-calendar/lib/localizers/date-fns';
 import moment from 'moment'
 import AppointmentDetail from './AppointmentDetail';
 import "react-datepicker/dist/react-datepicker.css"
+import AddAppointment from './AddAppointment';
 
 const locales = {
   "en-US": require("date-fns/locale/en-US")
@@ -62,6 +63,7 @@ function SitterCalendar({ logout }) {
       <br></br>
       <h1>Calendar</h1>
       <h2>Schedule New Appointment</h2>
+      <AddAppointment />
    
       <Calendar 
         localizer={localizer}

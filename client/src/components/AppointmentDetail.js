@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import AppointmentCard from './AppointmentCard'
 
-
 function AppointmentDetail({setIsAuthenticated, setUser}) {
   const [appointments, setAppointments] = useState([])
 
