@@ -17,37 +17,6 @@ function AppointmentDetail({setIsAuthenticated, setUser}) {
       .then(setAppointments);
   }
 
-  // console.log(appointments)
-
-  // const deleteAppt = (id) => {
-  //   fetch(`/appointments/${id}`, {
-  //     method: 'DELETE',
-  //   })
-  //   .then(res => res.json())
-  //   .then(deletedAppt => onDeletedAppt(deletedAppt))
-      
-  // };
-
-  // const deleteAppt = (id) => {
-  // // function handleDelete(id) {
-  //   fetch(`/appointments/${id}`, {
-  //     method: "DELETE",
-  //   }).then((r) => {
-  //     if (r.ok) {
-  //       setAppointments((appointment) =>
-  //         appointments.filter((appointment) => appointment.id !== id)
-  //       );
-  //     }
-  //   });
-  // }
-
-  // function onDeletedAppt(deletedAppt) {
-  //   const updatedAppts = appointments.filter((appointment) => appointment !== deletedAppt)
-  //   setAppointments(updatedAppts)
-  // }
-
-  
-
   const mappedAppts = appointments.map((appointment) => (
     <AppointmentCard
       key={appointment.id}

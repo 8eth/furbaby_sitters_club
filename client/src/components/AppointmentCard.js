@@ -27,6 +27,7 @@ function AppointmentCard({appointments, setAppointments, appointment}) {
       </div>
       <AddEdit
         appointment={appointment}  
+        setAppointments={setAppointments}
       />
       <br></br>
     </div>
