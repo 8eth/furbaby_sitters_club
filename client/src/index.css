@@ -37,6 +37,7 @@ code {
 
 .background {
   background: rgb(213, 216, 242);
+  text-align: center;
 }
 
 .center-page {
@@ -45,3 +46,15 @@ code {
   width: 50%;
   padding: 100px;
 }
+
+.errors {
+  color: red;
+}
+
+.logo {
+  font-family: 'Square Peg', cursive;
+  font-size: 80px;
+  color: #3b3b3b
+}
+
+

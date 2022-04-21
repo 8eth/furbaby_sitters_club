@@ -10,9 +10,6 @@ import AppointmentDetail from "./components/AppointmentDetail"
 import PetPage from "./components/PetPage"
 
 function App() {
-  // const [clients, setClients] = useState([])
-  // const [appointments, setAppointments] = useState([])
-
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
@@ -25,7 +22,6 @@ function App() {
           setIsAuthenticated(true);
           setUser(user);
         });
-  
       }
       else {
         console.log("We received errors...")
@@ -33,33 +29,34 @@ function App() {
     });
   },[]);
 
-  const logout = () => { 
-    fetch('/logout',{
-        method:'DELETE'
-    })
-    .then(()=>{
-        setIsAuthenticated(false)
-        setUser(null)
-    })
-  }
+  // const logout = () => { 
+  //   fetch('/logout',{
+  //       method:'DELETE'
+  //   })
+  //   .then(()=>{
+  //       setIsAuthenticated(false)
+  //       setUser(null)
+  //   })
+  // }
 
   function handleAddNewUser(newUser) {
     setUser([...user, newUser])
   }
   
   if (!isAuthenticated) return <LoginPage error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
+  if (!user) return <LoginPage onLogin={setUser} />
 
   return (
     <div className="background">
       <Switch>
       <Route exact path="/">
-        <LandingPage logout={logout}/>
+        <LandingPage setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
       </Route>
-      <Route exact path="/calendar">
+      {/* <Route exact path="/calendar">
         <SitterCalendar logout={logout}/>
-      </Route>
+      </Route> */}
       <Route exact path="/appointmentdetails">
-          <AppointmentDetail logout={logout}/>
+          <AppointmentDetail setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
       </Route>
       <Route path="/signup">
           <SignupPage onLogin={handleAddNewUser}/>
@@ -69,7 +66,7 @@ function App() {
           <LoginPage setUser={setUser} setIsAuthenticated={setIsAuthenticated} />
       </Route>
       <Route path="/pets">
-        <PetPage logout={logout}/>
+        <PetPage setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
       </Route>
       </Switch>
     </div>

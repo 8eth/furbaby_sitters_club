@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 
   function SignupPage({ onLogin, setUser }) {
+    const [errors, setErrors] = useState([]);
 
     const [formData, setFormData] = useState({
       username: "",
       password: "",
       passwordConfirmation: "",
-      fullName: "",
+      fullname: "",
       image: "",
       address:"",
       number:""
@@ -16,7 +17,7 @@ import React, {useState} from 'react'
       username: "",
       password: "",
       passwordConfirmation: "",
-      fullName: "",
+      fullname: "",
       image: "",
       address:"",
       number:""
@@ -31,12 +32,13 @@ import React, {useState} from 'react'
   
     function handleSubmit(e) {
       e.preventDefault();
+      setErrors([]);
 
       const newUser = { 
         username: formData.username,
         password: formData.password,
         passwordConfirmation: formData.passwordConfirmation,
-        fullName: formData.fullName,
+        fullname: formData.fullname,
         image: formData.image,
         address: formData.address,
         number: formData.number
@@ -49,8 +51,14 @@ import React, {useState} from 'react'
         },
         body: JSON.stringify(newUser),
       })
-        .then((r) => r.json())
-        .then(onLogin)
+        .then((r) => {
+          if (r.ok) {
+            r.json().then((user) => onLogin(user));
+          } else {
+            r.json().then((err) => setErrors(err.errors));
+          }
+        })
+        // .then(onLogin)
         .then(setFormData(initialFormState));
     }
   
@@ -62,7 +70,12 @@ import React, {useState} from 'react'
             <form 
                 className="ui two fields form center"
                 onSubmit={(e) => handleSubmit(e)}
-              >
+                >
+                <div>
+                  {errors.map((error) => (
+                    <ul className="errors">- {error}</ul>
+                  ))}
+                </div>
               <label htmlFor="username">Username:</label>
               <input
                 name="username"
@@ -87,16 +100,15 @@ import React, {useState} from 'react'
                 value={formData.passwordConfirmation}
                 onChange={(e) => handleChange(e)}
               />
-              <label>Full Name</label>
+              <label>Full Name:</label>
               <input
-                name="fullName"
+                name="fullname"
                 type="text"
                 id={FormData.name}
-                placeholder="*Required"
-                value={formData.fullName}
+                value={formData.fullname}
                 onChange={(e) => handleChange(e)}
               />
-              <label>Image</label>
+              <label>Image:</label>
               <input
                 name="image"
                 type="text"
@@ -105,21 +117,21 @@ import React, {useState} from 'react'
                 value={formData.image}
                 onChange={(e) => handleChange(e)}
               />
-              <label>Address</label>
+              <label>Address:</label>
               <input
                 name="address"
                 type="text"
                 id={FormData.address}
-                placeholder="*Required ex. 123 N Street, City, State, Zip  "
+                placeholder="ex. 123 N Street, City, State, Zip  "
                 value={formData.address}
                 onChange={(e) => handleChange(e)}
               />
-              <label>Phone Number</label>
+              <label>Phone Number:</label>
               <input
                 name="number"
                 type="text"
                 id={FormData.number}
-                placeholder="*Required ###-###-#### "
+                placeholder="###-###-#### "
                 value={formData.number}
                 onChange={(e) => handleChange(e)}
               />
