@@ -35,8 +35,8 @@ function AddAppointment({appointments, setAppointments}) {
       appt_start: formData.appt_start,
       appt_end: formData.appt_end,
       petcare: formData.petcare,
-      client_id: 9,
-      sitter_id: 11
+      client_id: 4,
+      sitter_id: 14
     }
       
     fetch(`/appointments`, {
