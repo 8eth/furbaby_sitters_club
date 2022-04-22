@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import AddEdit from "./AddEdit"
 
-function AppointmentCard({appointments, setAppointments, appointment}) {
+function AppointmentCard({ appointments, setAppointments, appointment }) {
 
   const [showEditForm, setShowEditForm] = useState(false)
 

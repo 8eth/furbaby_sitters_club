@@ -1,7 +1,7 @@
 import React,{ useState } from 'react'
 import { useHistory } from "react-router-dom";
 
-function AddEdit({ appointment}) {
+function AddEdit({ appointment }) {
     let history = useHistory();
 
     const [apptFormData, setApptFormData] = useState ({ 

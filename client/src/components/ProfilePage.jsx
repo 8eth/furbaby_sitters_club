@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import NavBar from "./NavBar"
 
-function Profile({setUser, setIsAuthenticated}) {
+function Profile({ setUser, setIsAuthenticated, user }) {
   const [profile, setProfile] = useState([])
 
   useEffect(() => {
@@ -9,15 +9,17 @@ function Profile({setUser, setIsAuthenticated}) {
       .then((r) => r.json())
       .then(setProfile);
   }, []);
-  // console.log(profile.username)
 
-  const clientObj = profile.map((cli) => 
-    <div className="center aligned cards">
+  const clientObj = profile.map((user) => 
+    <div className="center aligned cards" key={user.id}>
+      <br></br>
       <div className='ui card'>
-        <h4>{cli.fullname}</h4>
-        <img src={cli.image} alt="Profile picture"/>
-        <div>{cli.address}</div>
-        <div>{cli.number}</div>
+        <h4>{user.fullname}</h4>
+        <img src={user.image} alt={user.fullname}/>
+        <br></br>
+        <div><b>Username:</b> <ins>{user.username}</ins></div>
+        <div><b>Address:</b> {user.address}</div>
+        <div><b>Phone Number:</b> {user.number}</div>
       </div>
     </div>
 
@@ -25,12 +27,14 @@ function Profile({setUser, setIsAuthenticated}) {
 
   return (
     <div>
-      <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
+      <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user}/>
       <br></br>
       <br></br>
       <div className="ui center aligned grid container">
         {clientObj}
       </div>
+      <br></br>
+      <br></br>
     </div>
   )
 }

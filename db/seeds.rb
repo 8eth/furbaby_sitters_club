@@ -11,15 +11,45 @@ Client.create(
     fullname:'Mickey Mouse', 
     image: "https://images.pexels.com/photos/9646287/pexels-photo-9646287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
     address:'105 Town Square, Main Street, Disneyland, California, 91521',
-    number:"877-764-2539"
+    number:"877-764-2539",
+    admin: true
 )
+
 Client.create(
     username:'zoe', 
     password:'pass', 
     fullname:'Zoe Doggo', 
     image: "https://images.pexels.com/photos/2007/animal-dog-pet-cute.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
     address:'1600 Pennsylvania Avenue NW, Washington, DC 20500',
-    number:"603-413-4124"
+    number:"603-413-4124",
+    admin: true
+)
+
+Client.create(
+    username:'Admin', 
+    password:'password', 
+    fullname:'Administrator', 
+    image: "https://images.pexels.com/photos/733658/pexels-photo-733658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    address:'351 Farmington Ave., Hartford, Conn. 06105',
+    number:"618-625-8313"
+)
+
+Client.create(
+    username:'petluver444', 
+    password:'password', 
+    fullname:'Steve Irwin', 
+    image: "https://images.pexels.com/photos/2100047/pexels-photo-2100047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    address:'42 Wallaby Way, Sydney, Austraulia, 2022',
+    number:"605-475-6961"
+)
+
+Client.create(
+    username:'g@dz!lla', 
+    password:'password', 
+    fullname:'Dr. Doolittle', 
+    image: "https://images.pexels.com/photos/162318/cheetahs-cubs-two-together-162318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    address:'350 Fifth Avenue, New York City, NY 10118',
+    number:"844-435-7387"
 )
 
 puts "Making sitters👤..."

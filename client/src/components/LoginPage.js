@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import SignupPage from './SignupPage';
 
 
-function LoginPage({ onLogin, setUser, setIsAuthenticated }) {
+function LoginPage({ setUser, setIsAuthenticated }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState('')
    

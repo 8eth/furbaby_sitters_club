@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 
-function AddAppointment({appointments, setAppointments}) {
+function AddAppointment({ appointments, setAppointments }) {
+  
   const [errors, setErrors] = useState([]);
 
   const [formData, setFormData] = useState({

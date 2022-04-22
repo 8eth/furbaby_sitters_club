@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PetDetail({pet}) {
+function PetDetail({ pet }) {
   return (
     <div>
       <div className="center aligned cards">

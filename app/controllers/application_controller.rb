@@ -13,7 +13,6 @@ class ApplicationController < ActionController::API
   end
   
   def authorize
-    # debugger
     render json: { errors: ["Not authorized"] }, status: :unauthorized unless session.include? :client_id
   end
 

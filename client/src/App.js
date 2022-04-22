@@ -45,6 +45,7 @@ function App() {
           <LandingPage 
             setUser={setUser} 
             setIsAuthenticated={setIsAuthenticated}
+            user={user}
           />
         </Route>
 
@@ -52,6 +53,7 @@ function App() {
             <SitterCalendar 
              setUser={setUser} 
              setIsAuthenticated={setIsAuthenticated}
+             user={user}
             />
         </Route>
 
@@ -59,6 +61,7 @@ function App() {
           <AppointmentDetail 
             setUser={setUser} 
             setIsAuthenticated={setIsAuthenticated}
+            user={user}
           />
         </Route>
 
@@ -79,17 +82,20 @@ function App() {
           <PetPage 
             setUser={setUser} 
             setIsAuthenticated={setIsAuthenticated}
+            user={user}
           />
         </Route>
 
-        <Route path="/profile">
+        <Route path="/profiles">
           <ProfilePage
             setUser={setUser} 
             setIsAuthenticated={setIsAuthenticated}
+            user={user}
           />
         </Route>
 
       </Switch>
+      <div>Footer</div>
       
     </div>
   );
