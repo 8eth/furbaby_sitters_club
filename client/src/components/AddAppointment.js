@@ -17,9 +17,7 @@ function AddAppointment({ appointments, setAppointments }) {
     title: "",
     appt_start: "",
     appt_end: "",
-    petcare: "",
-    // client_id: "",
-    // sitter_id: ""
+    petcare: ""
   }
   
   function onCreateAppt(newAppt) {
@@ -37,7 +35,7 @@ function AddAppointment({ appointments, setAppointments }) {
       appt_end: formData.appt_end,
       petcare: formData.petcare,
       client_id: 4,
-      sitter_id: 14
+      sitter_id: 4
     }
       
     fetch(`/appointments`, {
@@ -65,7 +63,6 @@ function AddAppointment({ appointments, setAppointments }) {
   }
 
   return (
-    // <div>AddAppointment</div>
     <div className="background">
         <div className="form-border center-content">
           <div className="ui grid">
@@ -110,24 +107,6 @@ function AddAppointment({ appointments, setAppointments }) {
                 value={formData.petcare}
                 onChange={(e) => handleChange(e)}
               />
-              {/* <label>Client ID:</label>
-              <input
-                name="client_id"
-                type="text"
-                id={FormData.client_id}
-                placeholder=""
-                value={formData.client_id}
-                onChange={(e) => handleChange(e)}
-              />
-              <label>Sitter ID:</label>
-              <input
-                name="sitter_id"
-                type="text"
-                id={FormData.sitter_id}
-                placeholder=""
-                value={formData.sitter_id}
-                onChange={(e) => handleChange(e)}
-              /> */}
               <br></br>
               <br></br>
               <button className="ui submit button center" type="submit">Create</button>
