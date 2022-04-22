@@ -12,7 +12,7 @@ Client.create(
     image: "https://images.pexels.com/photos/9646287/pexels-photo-9646287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
     address:'105 Town Square, Main Street, Disneyland, California, 91521',
     number:"877-764-2539",
-    admin: true
+    admin:true
 )
 
 Client.create(
@@ -21,8 +21,7 @@ Client.create(
     fullname:'Zoe Doggo', 
     image: "https://images.pexels.com/photos/2007/animal-dog-pet-cute.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
     address:'1600 Pennsylvania Avenue NW, Washington, DC 20500',
-    number:"603-413-4124",
-    admin: true
+    number:"603-413-4124"
 )
 
 Client.create(
@@ -31,7 +30,8 @@ Client.create(
     fullname:'Administrator', 
     image: "https://images.pexels.com/photos/733658/pexels-photo-733658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
     address:'351 Farmington Ave., Hartford, Conn. 06105',
-    number:"618-625-8313"
+    number:"618-625-8313",
+    admin:true
 )
 
 Client.create(

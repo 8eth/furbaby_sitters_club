@@ -7,7 +7,7 @@ class ClientsController < ApplicationController
     end
 
     def show
-        client_id = Client.find_by(id: session[:current_user])
+        client_id = Client.find_by(id: session[:client_id])
         render json: client_id, status: :ok
     end
 

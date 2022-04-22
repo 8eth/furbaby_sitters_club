@@ -9,9 +9,11 @@ import ProfilePage from "./components/ProfilePage"
 import PetPage from "./components/PetPage"
 
 function App() {
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
-
+  
+  
   useEffect(() => {
     fetch('/authorize')
     .then((res) => {
@@ -86,13 +88,13 @@ function App() {
           />
         </Route>
 
-        <Route path="/profiles">
+        {user&&user.admin?<Route path="/profiles">
           <ProfilePage
             setUser={setUser} 
             setIsAuthenticated={setIsAuthenticated}
             user={user}
           />
-        </Route>
+        </Route>:null}
 
       </Switch>
       <div>Footer</div>

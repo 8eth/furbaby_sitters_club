@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import NavBar from "./NavBar"
 
 function Profile({ setUser, setIsAuthenticated, user }) {
+  
   const [profile, setProfile] = useState([])
 
   useEffect(() => {
