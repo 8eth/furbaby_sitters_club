@@ -1,20 +1,21 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import {Calendar, momentLocalizer, dateFnsLocalizer, TimeGrid } from 'react-big-calendar'
 import format from "date-fns/format";
 import parse from "date-fns/parse";
 import startOfWeek from 'date-fns/startOfWeek';
-import startOfDay from 'date-fns/startOfDay';
+// import startOfDay from 'date-fns/startOfDay';
 import getDay from 'date-fns/getDay';
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import "react-datetime-picker/dist/DateTimePicker.css"
-import DatePicker from 'react-datepicker'
-import DateTimePicker from 'react-datetime-picker'
+// import DatePicker from 'react-datepicker'
+// import DateTimePicker from 'react-datetime-picker'
 import NavBar from './NavBar'
 import dateFns from 'react-big-calendar/lib/localizers/date-fns';
 import moment from 'moment'
-import AppointmentDetail from './AppointmentDetail';
+// import AppointmentDetail from './AppointmentDetail';
 import "react-datepicker/dist/react-datepicker.css"
 import AddAppointment from './AddAppointment';
+import { Button } from 'semantic-ui-react'
 
 const locales = {
   "en-US": require("date-fns/locale/en-US")
@@ -39,9 +40,10 @@ const appts = [
 ]
 const localizer = momentLocalizer(moment)
 
-function SitterCalendar({ setIsAuthenticated, setUser }) {
+function SitterCalendar({ setIsAuthenticated, setUser, user }) {
 
   const [appointments, setAppointments] = useState([])
+  const [showCreateForm, setShowCreateForm] = useState(false)
   // const [allAppointments, setAllAppointments] = useState(appointments)
   
   useEffect(() => {
@@ -50,14 +52,17 @@ function SitterCalendar({ setIsAuthenticated, setUser }) {
       .then(setAppointments)
   }, [])
 
-  // console.log(appointments)
+  function handleCreateForm(e, showCreateForm){
+    e.stopPropagation()
+    setShowCreateForm(!showCreateForm)
+  }
 
   return (
     <div className="background"> 
-      <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
+      <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user}/>
       <h1>Calendar</h1>
-      <h2>Schedule New Appointment</h2>
-      <AddAppointment appointments={appointments} setAppointments={setAppointments}/>
+      <Button content='Create Appointment' icon='calendar' labelPosition='right' onClick={(e)=> handleCreateForm(e, showCreateForm)}/>
+      {showCreateForm && <AddAppointment appointments={appointments} setAppointments={setAppointments}/>}
    
       <Calendar 
         localizer={localizer}

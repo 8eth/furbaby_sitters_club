@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import SitterDetail from './SitterDetail'
 
-function LandingPage({setIsAuthenticated, setUser}) {
+function LandingPage({ setIsAuthenticated, setUser, user }) {
+
   const [sitters, setSitters] = useState([])
 
   useEffect(() => {
@@ -21,8 +22,7 @@ function LandingPage({setIsAuthenticated, setUser}) {
   return (
     <div className="background"> 
 
-      <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
-
+      <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user}/>
       <br></br>
       <div>We worry about your pet so you don't have to!</div>
       <h2>Meet the humans that will be taking care of your pets:</h2>
@@ -30,7 +30,6 @@ function LandingPage({setIsAuthenticated, setUser}) {
       <div className="form-border ui center aligned five row grid container"> 
         {mappedSitters}
       </div>
-      
     </div>
   )
 }

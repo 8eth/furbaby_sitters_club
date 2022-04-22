@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import NavBar from './NavBar'
 import AppointmentCard from './AppointmentCard'
 
-function AppointmentDetail({setIsAuthenticated, setUser}) {
+function AppointmentDetail({ setIsAuthenticated, setUser, user }) {
+
   const [appointments, setAppointments] = useState([])
 
   useEffect(() => {
@@ -27,7 +28,7 @@ function AppointmentDetail({setIsAuthenticated, setUser}) {
   
   return (
     <div>
-      <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
+      <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user}/>
       <h3>Your Appointments</h3>
       <div className='ui center aligned grid container'>
         {mappedAppts}    

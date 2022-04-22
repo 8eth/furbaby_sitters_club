@@ -3,16 +3,17 @@ import { Route, Switch } from "react-router-dom"
 import LandingPage from "./components/LandingPage"
 import SignupPage from "./components/SignupPage"
 import LoginPage from "./components/LoginPage"
-// import Logout from "./components/Logout"
 import SitterCalendar from "./components/SitterCalendar"
 import AppointmentDetail from "./components/AppointmentDetail"
-
+import ProfilePage from "./components/ProfilePage"
 import PetPage from "./components/PetPage"
 
 function App() {
+
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
-
+  
+  
   useEffect(() => {
     fetch('/authorize')
     .then((res) => {
@@ -46,6 +47,7 @@ function App() {
           <LandingPage 
             setUser={setUser} 
             setIsAuthenticated={setIsAuthenticated}
+            user={user}
           />
         </Route>
 
@@ -53,6 +55,7 @@ function App() {
             <SitterCalendar 
              setUser={setUser} 
              setIsAuthenticated={setIsAuthenticated}
+             user={user}
             />
         </Route>
 
@@ -60,6 +63,7 @@ function App() {
           <AppointmentDetail 
             setUser={setUser} 
             setIsAuthenticated={setIsAuthenticated}
+            user={user}
           />
         </Route>
 
@@ -80,10 +84,20 @@ function App() {
           <PetPage 
             setUser={setUser} 
             setIsAuthenticated={setIsAuthenticated}
+            user={user}
           />
         </Route>
 
+        {user&&user.admin?<Route path="/profiles">
+          <ProfilePage
+            setUser={setUser} 
+            setIsAuthenticated={setIsAuthenticated}
+            user={user}
+          />
+        </Route>:null}
+
       </Switch>
+      <div>Footer</div>
       
     </div>
   );

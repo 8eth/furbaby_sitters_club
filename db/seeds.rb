@@ -4,24 +4,52 @@ Client.destroy_all
 Sitter.destroy_all
 Pet.destroy_all
 
-Faker::Time.unique.clear
-# Faker::Name.unique.clear
-Faker::PhoneNumber.unique.clear
-Faker::FunnyName.unique.clear
-Faker::Internet.unique.clear
-
 puts "Making clients👤..."
-# 10.times {Client.create(full_name: Faker::Name.unique.name, 
-# image: Faker::LoremFlickr.image(size: "50x60", search_terms: ['celebrities']), 
-# address: Faker::Address.full_address, 
-# phone_number: Faker::PhoneNumber.unique.cell_phone)}
 Client.create(
     username:'User1', 
     password:'password', 
     fullname:'Mickey Mouse', 
-    image: "https://images.pexels.com/photos/10841753/pexels-photo-10841753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
+    image: "https://images.pexels.com/photos/9646287/pexels-photo-9646287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
     address:'105 Town Square, Main Street, Disneyland, California, 91521',
-    number:"877-764-2539"
+    number:"877-764-2539",
+    admin:true
+)
+
+Client.create(
+    username:'zoe', 
+    password:'pass', 
+    fullname:'Zoe Doggo', 
+    image: "https://images.pexels.com/photos/2007/animal-dog-pet-cute.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    address:'1600 Pennsylvania Avenue NW, Washington, DC 20500',
+    number:"603-413-4124"
+)
+
+Client.create(
+    username:'Admin', 
+    password:'password', 
+    fullname:'Administrator', 
+    image: "https://images.pexels.com/photos/733658/pexels-photo-733658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    address:'351 Farmington Ave., Hartford, Conn. 06105',
+    number:"618-625-8313",
+    admin:true
+)
+
+Client.create(
+    username:'petluver444', 
+    password:'password', 
+    fullname:'Steve Irwin', 
+    image: "https://images.pexels.com/photos/2100047/pexels-photo-2100047.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    address:'42 Wallaby Way, Sydney, Austraulia, 2022',
+    number:"605-475-6961"
+)
+
+Client.create(
+    username:'g@dz!lla', 
+    password:'password', 
+    fullname:'Dr. Doolittle', 
+    image: "https://images.pexels.com/photos/162318/cheetahs-cubs-two-together-162318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
+    address:'350 Fifth Avenue, New York City, NY 10118',
+    number:"844-435-7387"
 )
 
 puts "Making sitters👤..."
@@ -53,11 +81,29 @@ Sitter.create(
 )
 
 Sitter.create(
-    name: "Meg T.",
-    image: "https://images.pexels.com/photos/1612846/pexels-photo-1612846.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
+    name: "Charlie P.",
+    image: "https://images.pexels.com/photos/4917817/pexels-photo-4917817.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", 
     phone_number: Faker::PhoneNumber.unique.cell_phone, 
     email: Faker::Internet.unique.email, 
-    bio: Faker::Lorem.paragraph(sentence_count: 9), 
+    bio: Faker::Lorem.paragraph(sentence_count: 4), 
+    availability: true
+)
+
+Sitter.create(
+    name: "Dakota F.",
+    image: "https://images.pexels.com/photos/6002007/pexels-photo-6002007.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", 
+    phone_number: Faker::PhoneNumber.unique.cell_phone, 
+    email: Faker::Internet.unique.email, 
+    bio: Faker::Lorem.paragraph(sentence_count: 5), 
+    availability: true
+)
+
+Sitter.create(
+    name: "Bailey D.",
+    image: "https://images.pexels.com/photos/5749807/pexels-photo-5749807.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", 
+    phone_number: Faker::PhoneNumber.unique.cell_phone, 
+    email: Faker::Internet.unique.email, 
+    bio: Faker::Lorem.paragraph(sentence_count: 5), 
     availability: true
 )
 
@@ -70,23 +116,34 @@ Sitter.create(
     availability: true
 )
 
-# 5.times {Sitter.create(
-#     name: Faker::FunnyName.unique.name,
-#     image: Faker::LoremFlickr.image(size: "290x348", search_terms: ['people']), 
-#     phone_number: Faker::PhoneNumber.unique.cell_phone, 
-#     email: Faker::Internet.unique.email, 
-#     bio: Faker::Lorem.sentence(word_count: 5), 
-#     availability: true)}
+Sitter.create(
+    name: "Lynn K.",
+    image: "https://images.pexels.com/photos/9783903/pexels-photo-9783903.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", 
+    phone_number: Faker::PhoneNumber.unique.cell_phone, 
+    email: Faker::Internet.unique.email, 
+    bio: Faker::Lorem.paragraph(sentence_count: 5), 
+    availability: true
+)
+
+Sitter.create(
+    name: "Dana P.",
+    image: "https://images.pexels.com/photos/9083446/pexels-photo-9083446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", 
+    phone_number: Faker::PhoneNumber.unique.cell_phone, 
+    email: Faker::Internet.unique.email, 
+    bio: Faker::Lorem.paragraph(sentence_count: 5), 
+    availability: true
+)
+
+Sitter.create(
+    name: "Meg T.",
+    image: "https://images.pexels.com/photos/1612846/pexels-photo-1612846.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
+    phone_number: Faker::PhoneNumber.unique.cell_phone, 
+    email: Faker::Internet.unique.email, 
+    bio: Faker::Lorem.paragraph(sentence_count: 9), 
+    availability: true
+)
 
 puts "Making pets🐶🐱🐰..."
-# 20.times {Pet.create(name: Faker::JapaneseMedia::StudioGhibli.character, 
-# species: Faker::Creature::Animal.name, 
-# meds: Faker::Lorem.sentence(word_count: 7), 
-# fears: Faker::Lorem.sentence(word_count: 4), 
-# likes: Faker::Lorem.sentence(word_count: 3), 
-# # image: "../../client/src/images/pets1.jpg",
-# image: Faker::LoremFlickr.image(size: "290x348", search_terms: ['pets']) ,
-# client_id: Client.ids.sample)}
 
 Pet.create(
     name: Faker::FunnyName.name, 

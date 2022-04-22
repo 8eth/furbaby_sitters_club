@@ -6,25 +6,25 @@ class PetsController < ApplicationController
         render json: Pet.all
     end
 
-    def create
-        pet = Pet.create!(pet_params)
-        render json: pet, status: :created
-    end
+    # def create
+    #     pet = Pet.create!(pet_params)
+    #     render json: pet, status: :created
+    # end
 
     def show
         render json: @pet
     end
 
-    def update
-        pet = @pet
-        pet.update!(pet_params)
-        render json: pet, status: :accepted
-    end
+    # def update
+    #     pet = @pet
+    #     pet.update!(pet_params)
+    #     render json: pet, status: :accepted
+    # end
 
-    def destroy
-        @pet.destroy
-        head :no_content
-    end
+    # def destroy
+    #     @pet.destroy
+    #     head :no_content
+    # end
 
     private
 

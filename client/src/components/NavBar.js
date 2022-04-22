@@ -1,8 +1,8 @@
 import React from 'react'
 import { NavLink } from "react-router-dom";
 
-function NavBar({setIsAuthenticated, setUser}) {
-  // console.log("auth:", setIsAuthenticated)
+function NavBar({ setIsAuthenticated, setUser, user }) {
+
   const logout = () => {
     fetch('/logout',{
         method:'DELETE'
@@ -57,6 +57,17 @@ function NavBar({setIsAuthenticated, setUser}) {
       >
         Pets
       </NavLink>
+
+      {user&&user.admin?<NavLink
+        to="/profiles"
+        exact
+        className="ui center floated button"
+        activeStyle={{
+          background: "#E6E6E8",
+        }}
+      >
+        All User Profiles
+      </NavLink>:null}
 
       <button className="ui center floated button" onClick={()=>logout()}>Logout</button>
 

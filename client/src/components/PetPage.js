@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import NavBar from "./NavBar"
 import PetDetail from "./PetDetail"
 
-function PetPage({setIsAuthenticated, setUser}) {
+function PetPage({ setIsAuthenticated, setUser, user }) {
+
   const [pets, setPets] = useState([])
 
   useEffect(() => {
@@ -19,7 +20,7 @@ function PetPage({setIsAuthenticated, setUser}) {
     )
   return (
     <div>
-        <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>
+        <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user}/>
         <h2>Meet all the furbabies we take care of:</h2>
         <br></br>
         <div className="ui center aligned grid container">
