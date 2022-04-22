@@ -15,7 +15,6 @@ import moment from 'moment'
 // import AppointmentDetail from './AppointmentDetail';
 import "react-datepicker/dist/react-datepicker.css"
 import AddAppointment from './AddAppointment';
-import { Button } from 'semantic-ui-react'
 
 const locales = {
   "en-US": require("date-fns/locale/en-US")
@@ -44,7 +43,6 @@ function SitterCalendar({ setIsAuthenticated, setUser, user }) {
 
   const [appointments, setAppointments] = useState([])
   const [showCreateForm, setShowCreateForm] = useState(false)
-  // const [allAppointments, setAllAppointments] = useState(appointments)
   
   useEffect(() => {
       fetch("/appointments")
@@ -61,7 +59,8 @@ function SitterCalendar({ setIsAuthenticated, setUser, user }) {
     <div className="background"> 
       <NavBar setUser={setUser} setIsAuthenticated={setIsAuthenticated} user={user}/>
       <h1>Calendar</h1>
-      <Button content='Create Appointment' icon='calendar' labelPosition='right' onClick={(e)=> handleCreateForm(e, showCreateForm)}/>
+      <button className='ui button' onClick={(e)=> handleCreateForm(e, showCreateForm)}>Create Appointment</button>
+     
       {showCreateForm && <AddAppointment appointments={appointments} setAppointments={setAppointments}/>}
    
       <Calendar 
