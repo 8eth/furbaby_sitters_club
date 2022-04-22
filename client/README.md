@@ -29,14 +29,29 @@ The application allows the user to
   * View all pets
   * View all user profiles (Admin only)
 
+## Login Page
 ![Login page](./public/images/loginPage.png)
+
+## Home Page For Admin
 ![Home page](./public/images/HomePage.png)
-![Calendar page](./public/images/CalendarPage.png)
-![Appointment detail page](./public/images/AppointmentDetail.png)
-![Edit appointment form](./public/images/EditAppt.png)
-![Pets page](./public/images/PetsPage.png)
-![User profiles page for admin](./public/images/AllUserProfiles.png)
+
+## Home Page For Non-Admin
 ![Home page view for non-admin](./public/images/PageViewForNonAdmin.png)
+
+## Calendar Page
+![Calendar page](./public/images/CalendarPage.png)
+
+## Appointment Detail Page
+![Appointment detail page](./public/images/AppointmentDetail.png)
+
+## Edit Appointment Form
+![Edit appointment form](./public/images/EditAppt.png)
+
+## Pets Page
+![Pets page](./public/images/PetsPage.png)
+
+## User Profiles Page - for Admin Only
+![User profiles page for admin](./public/images/AllUserProfiles.png)
 
 ## Styling
 

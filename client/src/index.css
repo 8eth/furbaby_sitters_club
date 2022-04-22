@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(213, 216, 242);
+}
+
 .indent {
   margin: 0% 8% 0% 8%;
   text-align: center;
