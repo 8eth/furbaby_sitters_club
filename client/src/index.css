@@ -43,4 +43,13 @@
   color: #3b3b3b
 }
 
+.footer {
+  border-top: 1px solid gray;
+  color: #707070;
+  text-align: left;
+  padding-bottom: 2px;
+  padding-left: 3px;
+  display: flex;
+justify-content: space-between;
+}
 

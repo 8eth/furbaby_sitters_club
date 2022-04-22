@@ -97,7 +97,10 @@ function App() {
         </Route>:null}
 
       </Switch>
-      <div>Footer</div>
+      <div className='footer'>
+        <div>Furbaby Sitters Club   | //Flatiron School</div>   
+        <div>Created By: Beth Fekadu, Bevin Duncan, Kristina Peru | GitHub: <a href="https://github.com/8eth">Beth</a>, <a href="https://github.com/bevin-duncan">Bevin</a>, <a href="https://github.com/krisperu">Kristina</a></div>
+      </div> 
       
     </div>
   );
