@@ -9,7 +9,7 @@ Client.create(
     username:'User1', 
     password:'password', 
     fullname:'Mickey Mouse', 
-    image: "https://images.pexels.com/photos/10841753/pexels-photo-10841753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
+    image: "https://images.pexels.com/photos/9646287/pexels-photo-9646287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
     address:'105 Town Square, Main Street, Disneyland, California, 91521',
     number:"877-764-2539"
 )

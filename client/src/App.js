@@ -3,10 +3,9 @@ import { Route, Switch } from "react-router-dom"
 import LandingPage from "./components/LandingPage"
 import SignupPage from "./components/SignupPage"
 import LoginPage from "./components/LoginPage"
-// import Logout from "./components/Logout"
 import SitterCalendar from "./components/SitterCalendar"
 import AppointmentDetail from "./components/AppointmentDetail"
-
+import ProfilePage from "./components/ProfilePage"
 import PetPage from "./components/PetPage"
 
 function App() {
@@ -78,6 +77,13 @@ function App() {
 
         <Route path="/pets">
           <PetPage 
+            setUser={setUser} 
+            setIsAuthenticated={setIsAuthenticated}
+          />
+        </Route>
+
+        <Route path="/profile">
+          <ProfilePage
             setUser={setUser} 
             setIsAuthenticated={setIsAuthenticated}
           />

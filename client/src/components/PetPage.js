@@ -11,6 +11,8 @@ function PetPage({setIsAuthenticated, setUser}) {
       .then(setPets);
   }, []);
 
+  console.log(pets)
+
     const petObj = pets.map((pet) => 
       <PetDetail 
         key={pet.id}

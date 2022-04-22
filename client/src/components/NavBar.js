@@ -58,6 +58,17 @@ function NavBar({setIsAuthenticated, setUser}) {
         Pets
       </NavLink>
 
+      <NavLink
+        to="/profile"
+        exact
+        className="ui center floated button"
+        activeStyle={{
+          background: "#E6E6E8",
+        }}
+      >
+        My Profile
+      </NavLink>
+
       <button className="ui center floated button" onClick={()=>logout()}>Logout</button>
 
     </div>
