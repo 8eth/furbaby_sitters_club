@@ -23,7 +23,6 @@ function Profile({ setUser, setIsAuthenticated, user }) {
         <div><b>Phone Number:</b> {user.number}</div>
       </div>
     </div>
-
   )
 
   return (

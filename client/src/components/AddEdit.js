@@ -33,7 +33,6 @@ function AddEdit({ appointment }) {
             },
             body: JSON.stringify(editedAppt),
         })
-        // .then(() => setAppointments(editedAppt))
         history.push("/appointmentdetails")
     }
 

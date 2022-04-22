@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import SignupPage from './SignupPage';
 
-
 function LoginPage({ setUser, setIsAuthenticated }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState('')
@@ -77,7 +76,6 @@ function LoginPage({ setUser, setIsAuthenticated }) {
       </div> 
     </div>
   );
-
 }
 
 

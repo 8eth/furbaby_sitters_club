@@ -58,7 +58,6 @@ import React, { useState } from 'react'
             r.json().then((err) => setErrors(err.errors));
           }
         })
-        // .then(onLogin)
         .then(setFormData(initialFormState));
     }
   

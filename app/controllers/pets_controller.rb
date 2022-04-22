@@ -6,11 +6,6 @@ class PetsController < ApplicationController
         render json: Pet.all
     end
 
-    # def create
-    #     pet = Pet.create!(pet_params)
-    #     render json: pet, status: :created
-    # end
-
     def show
         render json: @pet
     end

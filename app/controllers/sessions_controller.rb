@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
       user = Client.find_by(username: params[:username])
       if user&.authenticate(params[:password])
         session[:client_id] = user.id
-        # debugger
         render json: user
       else
         render json: { errors: ["Invalid username or password"] }, status: :unauthorized
@@ -14,7 +13,6 @@ class SessionsController < ApplicationController
     end
   
     def logout
-      # session.delete :client_id
       if session[:client_id] != nil
         session.delete :client_id
         head :no_content
