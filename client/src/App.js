@@ -13,7 +13,6 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   
-  
   useEffect(() => {
     fetch('/authorize')
     .then((res) => {
@@ -40,7 +39,7 @@ function App() {
   return (
     
     <div className="background">
-      <h1 className="logo">Furbaby Sitters Club</h1>
+      <h1 className="font-face-gm">Furbaby Sitters Club</h1>
 
       <Switch>
         <Route exact path="/">

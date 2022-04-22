@@ -37,7 +37,7 @@ function LoginPage({ setUser, setIsAuthenticated }) {
 
   return (
     <div className="background">
-      <h1 className="logo center">Furbaby Sitters Club</h1>
+      <h1 className="font-face-gm">Furbaby Sitters Club</h1>
       <h3 className="center-content">Login</h3>
       <div className="form-border center-content">
         <div className="ui grid">

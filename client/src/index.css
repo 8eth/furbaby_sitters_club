@@ -37,11 +37,11 @@
   color: red;
 }
 
-.logo {
+/* .logo {
   font-family: 'Square Peg', cursive;
   font-size: 80px;
   color: #3b3b3b
-}
+} */
 
 .footer {
   border-top: 1px solid gray;
@@ -50,6 +50,18 @@
   padding-bottom: 2px;
   padding-left: 3px;
   display: flex;
-justify-content: space-between;
+  justify-content: space-between;
 }
 
+@font-face {
+  font-family: "SquareKids-LZ5y";
+  src: local("SquareKids-LZ5y"),
+  url("./fonts/SquareKids-LZ5y.ttf") format("truetype");
+  font-weight: bold;
+}
+
+.font-face-gm {
+  font-family: "SquareKids-LZ5y";
+  color: purple;
+  font-size: 60px;
+}
