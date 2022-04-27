@@ -12,7 +12,7 @@ Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 ## Back End
 
 The back-end of the website is built using Ruby on Rails.
-`rails s` runs the back-end of the app in the development mode.
+`rails db:create db:migrate db:seed` then run `rails s` to run the back-end of the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ![ERD](./client/public/images/ERD.png)
 
