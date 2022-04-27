@@ -18,7 +18,6 @@ function LandingPage({ setIsAuthenticated, setUser, user }) {
       sitter={sitter}
     />
   )
-
   return (
     <div className="background"> 
 
