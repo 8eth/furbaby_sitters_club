@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function AddAppointment({ appointments, setAppointments }) {
+function AddAppointment({ appointments, setAppointments, user }) {
   
   const [errors, setErrors] = useState([]);
 
@@ -9,9 +9,10 @@ function AddAppointment({ appointments, setAppointments }) {
     appt_start: "",
     appt_end: "",
     petcare: "",
-    client_id: "",
+    client_id: user.id,
     sitter_id: ""
   })
+  console.log(user.id)
 
   const initialFormState = {
     title: "",

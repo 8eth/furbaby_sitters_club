@@ -48,7 +48,7 @@ function SitterCalendar({ setIsAuthenticated, setUser, user }) {
       <h1>Calendar</h1>
       <button className='ui button' onClick={(e)=> handleCreateForm(e, showCreateForm)}>Create Appointment</button>
      
-      {showCreateForm && <AddAppointment appointments={appointments} setAppointments={setAppointments}/>}
+      {showCreateForm && <AddAppointment appointments={appointments} setAppointments={setAppointments} user={user}/>}
    
       <Calendar 
         localizer={localizer}
