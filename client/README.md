@@ -2,6 +2,10 @@
 
 This application is used to book a pet-sitting session for your favorite pet.
 
+# Deployed App
+
+https://furbaby-sitters-club.herokuapp.com/
+
 ## Front End
 
 The front-end of the website is built using React.
